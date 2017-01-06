@@ -13,3 +13,4 @@ gem 'jshintrb'
 gem 'therubyracer'
 gem 'rspec'
 gem 'capybara'
+gem "capybara-webkit"

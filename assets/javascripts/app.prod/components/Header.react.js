@@ -6,7 +6,7 @@
 
             return (
                 React.createElement("header", {id: "header"}, 
-                    React.createElement("h1", null, "todos"), 
+                    React.createElement("h1", null, "todos friday"), 
                     React.createElement(App.Components.TodoTextInput, {id: "my-todo", placeholder: "What needs to be done?", onSave: this._onSave})
                 )
             )

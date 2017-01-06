@@ -2,6 +2,7 @@ require './app'
 require 'rspec/core/rake_task'
 require 'jasmine'
 require 'jshintrb/jshinttask'
+require './features/sprockets_middleware'
 
 load 'jasmine/tasks/jasmine.rake'
 
@@ -15,6 +16,18 @@ RSpec::Core::RakeTask.new(:spec)
 
 RSpec::Core::RakeTask.new(:feature) do |task|
   task.pattern = 'features/*spec.rb'
+end
+
+desc 'host sprockets middleware'
+task :host_sprockets_middleware do
+  class App < Sinatra::Base
+    use SprocketsMiddleware, %r{/assets} do |env|
+      env.append_path "assets/stylesheets"
+      env.append_path "assets/javascripts"
+    end
+  end
+
+  App.run!
 end
 
 desc 'compile jsx for production'

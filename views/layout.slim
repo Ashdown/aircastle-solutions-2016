@@ -6,9 +6,20 @@ html
 
   body
     == yield
-    script src="assets/lib/lib.js"
-
-    - if ENV['RACK_ENV'] == 'production'
-      script src="assets/app.prod/app.js"
+    - if ENV['RACK_ENV'] == 'test'
+      script src="http://localhost:4567/assets/lib/lib.js"
     - else
-      script type="text/jsx" src="assets/app/app.js"
+      script src="assets/lib/lib.js"
+
+    javascript:
+      document.getElementsByClassName('test-node')[0].innerHTML = 'This is new content'
+
+    - case ENV['RACK_ENV']
+      - when 'test'
+        script src="http://localhost:4567/assets/app.prod/app.js"
+
+      - when 'production'
+        script src="assets/app.prod/app.js"
+
+      - when 'development'
+        script type="text/jsx" src="assets/app/app.js"
