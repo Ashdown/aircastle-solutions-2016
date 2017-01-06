@@ -19,6 +19,10 @@ Simple Ruby application with the following features
 Helpful Commands
 ----------------
 
+Install dependencies
+
+`bundle install`
+
 Create a new Heroku app
 
 `heroku create`
@@ -64,7 +68,21 @@ Database Integration
 
 For more see
 
-[Making a simple database driven website with sinatra and heroku](https://samuelstern.wordpress.com/2012/11/28/making-a-simple-database-driven-website-with-sinatra-and-heroku/)  
+[Making a simple database driven website with sinatra and heroku](https://samuelstern.wordpress.com/2012/11/28/making-a-simple-database-driven-website-with-sinatra-and-heroku/)
+  
+  
+Troubleshooting
+---------------
+
+To install capybara-webkit, do the following
+
+`brew upgrade`
+`brew update`
+`brew tap homebrew/versions`
+`brew install qt55`
+`brew link --force qt55`
+`sudo bundle install`
+
 
 
 
