@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title My Sinatra App
+    title Aircastle Solutions
     link href="assets/index.css" rel="stylesheet" type="text/css"
 
   body
@@ -10,9 +10,6 @@ html
       script src="http://localhost:4567/assets/lib/lib.js"
     - else
       script src="assets/lib/lib.js"
-
-    javascript:
-      document.getElementsByClassName('test-node')[0].innerHTML = 'This is new content'
 
     - case ENV['RACK_ENV']
       - when 'test'
