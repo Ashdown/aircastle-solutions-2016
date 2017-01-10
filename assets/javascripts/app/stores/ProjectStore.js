@@ -21,7 +21,11 @@
                 alt: data.picture.alt,
                 height: data.picture.height,
                 width: data.picture.width
-            }
+            },
+            links: data.links,
+            keywords: data.keywords,
+            start: data.startDate,
+            end: data.endDate
         });
     }
 
