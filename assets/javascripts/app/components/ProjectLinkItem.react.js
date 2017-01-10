@@ -1,6 +1,6 @@
 (function(react, app) {
 
-    App.Components.ProjectLink = React.createClass({displayName: "ProjectLink",
+    App.Components.ProjectLinkItem = React.createClass({displayName: "ProjectLinkItem",
 
         propTypes: {
             text: React.PropTypes.object.isRequired,
