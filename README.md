@@ -1,43 +1,20 @@
-Sinatra React Test App
+Aircastle Solutions 2016
 ================
 
-Simple Ruby application with the following features
+Web portfolio with the following features
+ 
+    * Ruby Sinatra back en
+    * React/Flux Front end
+    * Hosted on Heroku
 
-    * Sinatra
-    * Hosted on heroku
-    * Slim templates
-    * Sprockets and asset pipeline
-    * SCSS
-    * Jasmine testing
-    * rspec testing
-    * Feature testing
-    * React
-    * Implementation of Flux
-    
-[Sinatra Test App on Heroku](https://sheltered-taiga-2980.herokuapp.com/) 
-    
-Helpful Commands
-----------------
+[Aircastle Solutions 2016 on Heroku](https://frozen-falls-74291.herokuapp.com/)
+ 
+Run it locally
+--------------
 
 Install dependencies
 
 `bundle install`
-
-Create a new Heroku app
-
-`heroku create`
-
-Deploy App
-
-`git push heroku master`
-
-Open App
-
-`heroku open`
-
-Set environment variable
-
-`heroku config:set FOO=BAR`
 
 Run locally
 
@@ -46,11 +23,6 @@ Run locally
 View locally
 
 [local site](http://localhost:5000/)
-
-For more see
-
-[Getting started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby)
-[React TutorialRe](https://facebook.github.io/react/docs/tutorial.html)
 
 Compiling React Files for production
 ------------------------------------
@@ -63,14 +35,26 @@ Run the rake command
 
 `rake compilejsx`
 
-Database Integration
+Deploy to production
 --------------------
 
-For more see
+Deploy App
 
-[Making a simple database driven website with sinatra and heroku](https://samuelstern.wordpress.com/2012/11/28/making-a-simple-database-driven-website-with-sinatra-and-heroku/)
-  
-  
+`git push heroku master`
+
+Open App
+
+`heroku open`
+
+Further reading
+---------------
+    
+[Sinatra React App](https://github.com/Ashdown/sinatra-react)
+[Aircastle Solutions CMS](https://github.com/Ashdown/aircastle-solutions-2016-cms)
+[Getting started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby)
+[React TutorialRe](https://facebook.github.io/react/docs/tutorial.html)
+
+
 Troubleshooting
 ---------------
 
