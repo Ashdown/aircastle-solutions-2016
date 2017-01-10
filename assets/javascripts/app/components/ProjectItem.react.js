@@ -13,6 +13,8 @@
                 <li className="project-item">
                     <h2>{data.title}</h2>
                     <p>{data.description}</p>
+                    <img src={data.image.src} alt={data.image.alt} height={data.image.height} width={data.image.width} />
+
                 </li>
                 );
         }

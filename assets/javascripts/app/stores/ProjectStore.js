@@ -15,7 +15,13 @@
         _projects.push({
             id: id,
             title: data.title,
-            description: data.description
+            description: data.description,
+            image: {
+                src: data.picture.url,
+                alt: data.picture.alt,
+                height: data.picture.height,
+                width: data.picture.width
+            }
         });
     }
 
