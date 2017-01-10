@@ -30,6 +30,10 @@
                     <ul>{links}</ul>
                     <h3>Keywords</h3>
                     <ul>{keywords}</ul>
+                    <h3>Start Date</h3>
+                    <p>{data.start}</p>
+                    <h3>End Date</h3>
+                    <p>{data.end}</p>
                 </li>
                 );
         }
