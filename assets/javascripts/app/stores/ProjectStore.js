@@ -14,7 +14,8 @@
         var id = Date.now();
         _projects.push({
             id: id,
-            title: data.title
+            title: data.title,
+            description: data.description
         });
     }
 

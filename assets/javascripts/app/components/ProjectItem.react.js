@@ -9,7 +9,12 @@
         render: function() {
             var data = this.props.data;
 
-            return(React.createElement('li', {key: data.id}, data.title));
+            return(
+                <li className="project-item">
+                    <h2>{data.title}</h2>
+                    <p>{data.description}</p>
+                </li>
+                );
         }
     })
 

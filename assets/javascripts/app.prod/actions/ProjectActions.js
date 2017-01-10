@@ -1,0 +1,23 @@
+(function(React, App, fetch, Request){
+    App.Actions.Project = {
+        get: function() {
+
+            var projectDataRequest = new Request('/api/test/projects/');
+
+            fetch(projectDataRequest).then(function(response) {
+                return response.json();
+            }).then(function(data) {
+
+                for(var i = 0; i < data.projects.length; i++) {
+                    App.Dispatcher.handleViewAction({
+                        actionType: App.Constants.ProjectConstants.CREATE,
+                        data: data.projects[i]
+                    });
+                }
+
+            });
+
+
+        }
+    }
+})(React, App, fetch, Request);
