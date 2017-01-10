@@ -24,6 +24,12 @@ View locally
 
 [local site](http://localhost:5000/)
 
+Run feature tests
+-----------------
+
+`rake host_sprockets_middleware`
+`rake feature`
+
 Compiling React Files for production
 ------------------------------------
 
@@ -53,7 +59,6 @@ Further reading
 [Aircastle Solutions CMS](https://github.com/Ashdown/aircastle-solutions-2016-cms)
 [Getting started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby)
 [React TutorialRe](https://facebook.github.io/react/docs/tutorial.html)
-
 
 Troubleshooting
 ---------------
