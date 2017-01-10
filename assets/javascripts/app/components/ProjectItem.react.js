@@ -18,22 +18,22 @@
             var keywords = [];
 
             for(var i = 0; i < data.keywords.length; i++) {
-                keywords.push(<li>{data.keywords[i]}</li>);
+                keywords.push(<li className="keyword">{data.keywords[i]}</li>);
             }
 
             return(
                 <li className="project-item">
-                    <h2>{data.title}</h2>
-                    <p>{data.description}</p>
-                    <img src={data.image.src} alt={data.image.alt} height={data.image.height} width={data.image.width} />
-                    <h3>Links</h3>
+                    <h2 className="project-title">{data.title}</h2>
+                    <p className="description">{data.description}</p>
+                    <img className="image" src={data.image.src} alt={data.image.alt} height={data.image.height} width={data.image.width} />
+                    <h3 className="sub-title">Links</h3>
                     <ul>{links}</ul>
-                    <h3>Keywords</h3>
+                    <h3 className="sub-title">Keywords</h3>
                     <ul>{keywords}</ul>
-                    <h3>Start Date</h3>
-                    <p>{data.start}</p>
-                    <h3>End Date</h3>
-                    <p>{data.end}</p>
+                    <h3 className="sub-title" >Start Date</h3>
+                    <p className="sub-item">{data.start}</p>
+                    <h3 className="sub-title" >End Date</h3>
+                    <p className="sub-item">{data.end}</p>
                 </li>
                 );
         }

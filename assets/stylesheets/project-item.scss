@@ -1,0 +1,55 @@
+.project-item {
+  border: 2px solid #ccc;
+  margin-top: 8px;
+  position: relative;
+  padding-left: 416px;
+  padding-bottom: 8px;
+  min-height: 276px;
+
+  .project-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+
+  .description,
+  .sub-title,
+  .sub-item,
+  .keyword{
+    font-size: 16px;
+  }
+
+  .description,
+  .sub-title{
+    font-size: 16px;
+    margin-top: 8px;
+  }
+
+  .image {
+    width: 400px;
+    height: auto;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+  }
+
+  .keyword {
+    display: inline;
+
+    &:after {
+      content: ', ';
+    }
+    &:last-child:after {
+      content: '';
+    }
+  }
+
+  .sub-title {
+    font-weight: bold;
+  }
+
+  .sub-item {
+    margin-top: 4px;
+  }
+
+}

@@ -5,7 +5,7 @@
         render: function(){
 
             return (
-                <header id="header">Header</header>
+                <header id="header"></header>
             )
         }
 
