@@ -5,17 +5,8 @@
         render: function(){
 
             return (
-                <header id="header">
-                    <h1>todos friday</h1>
-                    <App.Components.TodoTextInput id="my-todo" placeholder="What needs to be done?" onSave={this._onSave} />
-                </header>
+                <header id="header">Header</header>
             )
-        },
-
-        _onSave: function(text){
-            if(text.trim()) {
-                App.Actions.Todo.create(text);
-            }
         }
 
     });
