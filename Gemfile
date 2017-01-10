@@ -13,4 +13,7 @@ gem 'jshintrb'
 gem 'therubyracer'
 gem 'rspec'
 gem 'capybara'
-gem "capybara-webkit"
+
+group :development, :test do
+  gem "capybara-webkit"
+end
