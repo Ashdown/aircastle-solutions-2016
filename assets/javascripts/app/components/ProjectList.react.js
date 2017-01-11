@@ -2,61 +2,77 @@
 
     var projectGrid;
 
-    function getState() {
-
-        return { projectData: App.Stores.ProjectStore.getAll() };
-    }
-
     App.Components.ProjectList = React.createClass({
 
-        getInitialState: function () {
-            return getState();
+        removeClass: function(element, classname) {
+            var reg = new RegExp('(\\s|^)'+classname+'(\\s|$)');
+            element.className = element.className.replace(reg,' ');
         },
 
-        componentDidMount: function () {
-            App.Stores.ProjectStore.addChangeListener(this._onChange);
-            App.Actions.Project.get();
+        getPageScrollTop: function() {
+            var doc = document.documentElement;
+            return (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
         },
 
-        componentWillUnmount: function () {
-            App.Stores.ProjectStore.removeChangeListener(this._onChange);
+        getProjectItemOffsetTop: function(projectItem) {
+            return (
+                projectItem.offsetTop +
+                document.getElementsByClassName('project-list')[0].offsetTop -
+                projectItem.offsetHeight);
+        },
+
+        fadeInVisibleProjects: function() {
+            var projectList = React.findDOMNode(this),
+                invisibleProjectItems = projectList.getElementsByClassName('invisible'),
+                pageScrollTop = this.getPageScrollTop();
+
+            for(var i = 0; i < invisibleProjectItems.length; i++) {
+                if(pageScrollTop > this.getProjectItemOffsetTop(invisibleProjectItems[i])) {
+                    this.removeClass(invisibleProjectItems[i], 'invisible');
+                }
+            }
+
+        },
+
+        componentDidMount: function() {
+            window.addEventListener('scroll', this.fadeInVisibleProjects);
+        },
+
+        componentWillUnMount: function() {
+            window.removeEventListener('scroll', this.fadeInVisibleProjects);
         },
 
         componentDidUpdate: function() {
 
             if(projectGrid === undefined) {
                 projectGrid = new Masonry('.project-list', {
-                    itemSelector: '.project-item'
+                    itemSelector: '.project-item',
+                    transitionDuration: 0
                 });
             } else {
 
-                var projectList = document.getElementsByClassName('project-list')[0],
+                var projectList = React.findDOMNode(this),
                     projectItems = projectList.getElementsByClassName('project-item');
 
                 if(projectGrid.getItemElements().length < projectItems.length) {
                     projectGrid.appended(projectItems[projectItems.length - 1]);
                 }
             }
+            this.fadeInVisibleProjects();
         },
 
         render: function() {
 
-            var projectData = this.state.projectData;
-            var projectComponents = [];
+            var projectData = this.props.data,
+                projectComponents = [];
 
             for(var key in projectData) {
                 projectComponents.push(<App.Components.ProjectItem key={key} data={projectData[key]} />);
             }
 
-            return (
-                <ul className="project-list">{projectComponents}</ul>
-                );
-        },
-
-        _onChange: function () {
-            this.setState(getState());
+            return (<ul className="project-list" ref="project">{projectComponents}</ul>);
         }
 
-    })
+    });
 
 })(React, App);

@@ -1,11 +1,31 @@
+@mixin transition($property, $duration, $type) {
+  -webkit-transition: $property $duration $type;
+  -moz-transition: $property $duration $type;
+  -o-transition: $property $duration $type;
+  transition: $property $duration $type;
+}
+
 .project-item {
-  border: 2px solid #ccc;
-  margin: 8px 4px 0 4px;
-  position: relative;
-  padding-left: 316px;
-  padding-bottom: 8px;
-  min-height: 276px;
-  width: 200px;
+
+  .container {
+    position: relative;
+    top: 0;
+    border: 2px solid #ccc;
+    margin: 8px 4px 0 4px;
+    padding-left: 316px;
+    min-height: 276px;
+    width: 200px;
+    opacity: 1;
+    padding-bottom: 8px;
+    @include transition(all, 0.3s, linear);
+  }
+
+  &.invisible {
+    .container {
+      opacity: 0;
+      top: 32px;
+    }
+  }
 
   .project-title {
     font-size: 20px;
@@ -52,5 +72,9 @@
   .sub-item {
     margin-top: 4px;
   }
+
+
+
+
 
 }
