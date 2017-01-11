@@ -1,5 +1,25 @@
-(function (React, App) {
+(function (React, App, Masonry) {
+
+    var projectGrid;
+
     App.Components.MainSection = React.createClass({
+
+        componentDidUpdate: function() {
+
+            if(projectGrid === undefined) {
+                projectGrid = new Masonry('.project-list', {
+                    itemSelector: '.project-item'
+                });
+            } else {
+
+                var projectList = document.getElementsByClassName('project-list')[0],
+                    projectItems = projectList.getElementsByClassName('project-item');
+
+                if(projectGrid.getItemElements().length < projectItems.length) {
+                    projectGrid.appended(projectItems[projectItems.length - 1]);
+                }
+            }
+        },
 
         render: function () {
 
@@ -12,11 +32,11 @@
 
             return (
                 <section id="main">
-                    <ul id="project-list">{projectComponents}</ul>
+                    <ul className="project-list">{projectComponents}</ul>
                 </section>
                 );
 
         }
     });
 
-})(React, App);
+})(React, App, Masonry);

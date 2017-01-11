@@ -1,10 +1,11 @@
 .project-item {
   border: 2px solid #ccc;
-  margin-top: 8px;
+  margin: 8px 4px 0 4px;
   position: relative;
-  padding-left: 416px;
+  padding-left: 316px;
   padding-bottom: 8px;
   min-height: 276px;
+  width: 200px;
 
   .project-title {
     font-size: 20px;
@@ -26,7 +27,7 @@
   }
 
   .image {
-    width: 400px;
+    width: 300px;
     height: auto;
     position: absolute;
     top: 8px;
