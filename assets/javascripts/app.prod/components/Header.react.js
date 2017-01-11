@@ -5,7 +5,7 @@
         render: function(){
 
             return (
-                React.createElement("header", {id: "header"}, "Header")
+                React.createElement("header", {id: "header"})
             )
         }
 
