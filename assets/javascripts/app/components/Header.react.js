@@ -5,7 +5,10 @@
         render: function(){
 
             return (
-                <header id="header"></header>
+                <header className="header">
+                    <h1 className="page-title">Rory Devane</h1>
+                    <p className="intro-para">Full Stack Web Developer</p>
+                </header>
             )
         }
 

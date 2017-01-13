@@ -22,18 +22,20 @@
             }
 
             return(
-                React.createElement("li", {className: "project-item"}, 
-                    React.createElement("h2", {className: "project-title"}, data.title), 
-                    React.createElement("p", {className: "description"}, data.description), 
-                    React.createElement("img", {className: "image", src: data.image.src, alt: data.image.alt, height: data.image.height, width: data.image.width}), 
-                    React.createElement("h3", {className: "sub-title"}, "Links"), 
-                    React.createElement("ul", null, links), 
-                    React.createElement("h3", {className: "sub-title"}, "Keywords"), 
-                    React.createElement("ul", null, keywords), 
-                    React.createElement("h3", {className: "sub-title"}, "Start Date"), 
-                    React.createElement("p", {className: "sub-item"}, data.start), 
-                    React.createElement("h3", {className: "sub-title"}, "End Date"), 
-                    React.createElement("p", {className: "sub-item"}, data.end)
+                React.createElement("li", {className: "project-item invisible"}, 
+                    React.createElement("div", {className: "container"}, 
+                        React.createElement("h2", {className: "project-title"}, data.title), 
+                        React.createElement("p", {className: "description"}, data.description), 
+                        React.createElement("img", {className: "image", src: data.image.src, alt: data.image.alt, height: data.image.height, width: data.image.width}), 
+                        React.createElement("h3", {className: "sub-title"}, "Links"), 
+                        React.createElement("ul", null, links), 
+                        React.createElement("h3", {className: "sub-title"}, "Keywords"), 
+                        React.createElement("ul", null, keywords), 
+                        React.createElement("h3", {className: "sub-title"}, "Start Date"), 
+                        React.createElement("p", {className: "sub-item"}, data.start), 
+                        React.createElement("h3", {className: "sub-title"}, "End Date"), 
+                        React.createElement("p", {className: "sub-item"}, data.end)
+                    )
                 )
                 );
         }

@@ -4,7 +4,10 @@
 
             var projectDataRequest = new Request('/api/test/projects/');
 
+            //var projectDataRequest = new Request('http://shielded-scrubland-59117.herokuapp.com/projects/');
+
             fetch(projectDataRequest).then(function(response) {
+
                 return response.json();
             }).then(function(data) {
 
