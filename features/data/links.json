@@ -1,0 +1,16 @@
+{
+    "links": [
+        {
+            "id": "11",
+            "text": "First Link",
+            "destination": "#first-link",
+            "type": "linked-in"
+        },
+        {
+            "id": "12",
+            "text": "Second Link",
+            "destination": "#second-link",
+            "type": "github"
+        }
+    ]
+}
