@@ -3,7 +3,7 @@
     App.Components.Footer = React.createClass({
         render: function() {
             return(
-                <div></div>
+                <footer className="footer">&copy; Rory Devane 2017</footer>
                 );
         }
     });
