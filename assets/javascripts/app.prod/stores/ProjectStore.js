@@ -15,6 +15,7 @@
         _projects.push({
             id: id,
             title: data.title,
+            type: data.type,
             description: data.description,
             image: {
                 src: data.picture.url,

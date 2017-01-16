@@ -25,6 +25,7 @@
 
             return (
                 React.createElement("section", {id: "main"}, 
+                    React.createElement("h2", {className: "sub-title"}, "Projects"), 
                     React.createElement(App.Components.ProjectList, {data: projectData})
                 )
                 );
