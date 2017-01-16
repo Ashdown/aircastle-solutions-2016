@@ -2,7 +2,9 @@
 
     var CHANGE_EVENT_STRING = 'about_change';
     var CHANGE_EVENT = new Event(CHANGE_EVENT_STRING);
-    var _about = {};
+    var _about = {
+        image: {}
+    };
 
     /**
      * Create the about object

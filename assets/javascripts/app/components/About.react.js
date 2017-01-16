@@ -9,10 +9,10 @@
                 <div className="about">
                     <p>{aboutData.description}</p>
                     <img className="about-image"
-                        src={aboutData.src}
-                        alt={aboutData.alt}
-                        height={aboutData.height}
-                        width={aboutData.width} />
+                        src={aboutData.image.src}
+                        alt={aboutData.image.alt}
+                        height="120"
+                        width="120" />
                 </div>
                 );
         }

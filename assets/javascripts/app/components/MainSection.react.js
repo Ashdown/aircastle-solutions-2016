@@ -40,9 +40,7 @@
         },
 
         _onChange: function () {
-            console.log('set state');
             this.setState(getState());
-            console.log(this.state.aboutData);
         }
     });
 
