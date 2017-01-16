@@ -1,0 +1,24 @@
+@import 'variables';
+
+.link-list {
+  margin: 8px 32px 0 32px;
+
+  .link {
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+    color: $grey;
+    margin-top: 8px;
+    padding: 10px 0 0 40px;
+    min-height: 22px;
+    position: relative;
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 32px;
+    width: 32px;
+  }
+}
