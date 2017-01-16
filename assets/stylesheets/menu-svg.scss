@@ -1,0 +1,13 @@
+.menu-svg {
+  .path {
+    stroke-width: 4px;
+    stroke: #333;
+  }
+
+  &.open {
+    .path {
+      stroke: #fff;
+    }
+  }
+
+}

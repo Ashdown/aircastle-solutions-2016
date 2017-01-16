@@ -13,17 +13,7 @@
                     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                     nisi ut aliquip ex ea commodo consequat.
                     </p>
-                    <ul>
-                        <li>
-                            <a href="#portfolio">My Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="#about">About Me</a>
-                        </li>
-                        <li>
-                            <a href="#links">Links</a>
-                        </li>
-                    </ul>
+                    <App.Components.Navigation />
 
                 </header>
                 )
