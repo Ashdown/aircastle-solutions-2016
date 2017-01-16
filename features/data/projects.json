@@ -3,6 +3,7 @@
         {
             "id": "11",
             "title": "First Project",
+            "type": "big",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
                 "alt": "First Project",
@@ -23,6 +24,7 @@
         {
             "id": "12",
             "title": "Second Project",
+            "type": "big",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Second%20Project&w=600&h=400",
                 "alt": "First Project",
@@ -43,6 +45,7 @@
         {
             "id": "32",
             "title": "Third Project",
+            "type": "small",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Third%20Project&w=600&h=400",
                 "alt": "First Project",
@@ -63,6 +66,7 @@
         {
             "id": "33",
             "title": "Third Project",
+            "type": "big",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Third%20Project&w=600&h=400",
                 "alt": "First Project",
@@ -82,7 +86,8 @@
         },
         {
             "id": "34",
-            "title": "Third Project",
+            "title": "Fourth Project",
+            "type": "small",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Third%20Project&w=600&h=400",
                 "alt": "First Project",
@@ -103,6 +108,7 @@
         {
             "id": "35",
             "title": "Third Project",
+            "type": "big",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Third%20Project&w=600&h=400",
                 "alt": "First Project",
@@ -123,6 +129,7 @@
         {
             "id": "36",
             "title": "Third Project",
+            "type": "small",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Third%20Project&w=600&h=400",
                 "alt": "First Project",
@@ -142,6 +149,7 @@
         },{
             "id": "37",
             "title": "Third Project",
+            "type": "small",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Third%20Project&w=600&h=400",
                 "alt": "First Project",
@@ -162,6 +170,7 @@
         {
             "id": "38",
             "title": "Third Project",
+            "type": "small",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Third%20Project&w=600&h=400",
                 "alt": "First Project",
@@ -182,6 +191,7 @@
         {
             "id": "39",
             "title": "Third Project",
+            "type": "small",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Third%20Project&w=600&h=400",
                 "alt": "First Project",
@@ -202,6 +212,7 @@
         {
             "id": "40",
             "title": "Third Project",
+            "type": "big",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Third%20Project&w=600&h=400",
                 "alt": "First Project",
@@ -222,6 +233,7 @@
         {
             "id": "41",
             "title": "Third Project",
+            "type": "big",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Third%20Project&w=600&h=400",
                 "alt": "First Project",
@@ -242,6 +254,7 @@
         {
             "id": "42",
             "title": "Third Project",
+            "type": "small",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Third%20Project&w=600&h=400",
                 "alt": "First Project",
@@ -262,6 +275,7 @@
         {
             "id": "43",
             "title": "Third Project",
+            "type": "small",
             "picture": {
                 "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Third%20Project&w=600&h=400",
                 "alt": "First Project",

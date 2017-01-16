@@ -13,17 +13,7 @@
                     "labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris" + ' ' +
                     "nisi ut aliquip ex ea commodo consequat."
                     ), 
-                    React.createElement("ul", null, 
-                        React.createElement("li", null, 
-                            React.createElement("a", {href: "#portfolio"}, "My Portfolio")
-                        ), 
-                        React.createElement("li", null, 
-                            React.createElement("a", {href: "#about"}, "About Me")
-                        ), 
-                        React.createElement("li", null, 
-                            React.createElement("a", {href: "#links"}, "Links")
-                        )
-                    )
+                    React.createElement(App.Components.Navigation, null)
 
                 )
                 )

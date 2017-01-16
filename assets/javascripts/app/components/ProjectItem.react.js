@@ -22,19 +22,26 @@
             }
 
             return(
-                <li className="project-item invisible">
+                <li className={"project-item invisible " + data.type}>
                     <div className="container">
-                        <h2 className="project-title">{data.title}</h2>
-                        <p className="description">{data.description}</p>
+                        <div className="project-details">
+                            <h2 className="project-title">{data.title}</h2>
+                            <p className="description">{data.description}</p>
+                            <h3 className="sub-title">Links</h3>
+                            <ul>{links}</ul>
+                            <h3 className="sub-title" >Start Date</h3>
+                            <p className="sub-item">{data.start}</p>
+                            <h3 className="sub-title" >End Date</h3>
+                            <p className="sub-item">{data.end}</p>
+                        </div>
+
                         <img className="image" src={data.image.src} alt={data.image.alt} height={data.image.height} width={data.image.width} />
-                        <h3 className="sub-title">Links</h3>
-                        <ul>{links}</ul>
-                        <h3 className="sub-title">Keywords</h3>
-                        <ul>{keywords}</ul>
-                        <h3 className="sub-title" >Start Date</h3>
-                        <p className="sub-item">{data.start}</p>
-                        <h3 className="sub-title" >End Date</h3>
-                        <p className="sub-item">{data.end}</p>
+
+                        <div className="keyword-container">
+                            <ul>{keywords}</ul>
+                        </div>
+
+
                     </div>
                 </li>
                 );

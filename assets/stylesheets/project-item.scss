@@ -1,58 +1,86 @@
-@mixin transition($property, $duration, $type) {
-  -webkit-transition: $property $duration $type;
-  -moz-transition: $property $duration $type;
-  -o-transition: $property $duration $type;
-  transition: $property $duration $type;
-}
+@import 'variables';
+@import 'mixins';
 
 .project-item {
+
+  width: 50%;
 
   .container {
     position: relative;
     top: 0;
-    border: 2px solid #ccc;
-    margin: 8px 4px 0 4px;
-    padding-left: 316px;
-    min-height: 276px;
-    width: 200px;
+    border: 1px solid $grey;
+    margin: 6px 3px 0 3px;
     opacity: 1;
-    padding-bottom: 8px;
+    overflow: hidden;
     @include transition(all, 0.3s, linear);
   }
 
   &.invisible {
     .container {
-      opacity: 0;
-      top: 32px;
+//      opacity: 0;
+//      top: 32px;
     }
   }
 
-  .project-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 8px;
+  .image {
+    position: absolute;
+    width: auto;
+    top: 0;
   }
 
+  &.big {
+
+    $container-height: 156px;
+
+    .container {
+      height: $container-height;
+      background-color: #00f;
+    }
+    .image {
+      height: $container-height;
+    }
+  }
+
+  &.small {
+
+    $container-height: 74px;
+
+    .container {
+      height: $container-height;
+      background-color: #f00;
+    }
+    .image {
+      height: $container-height;
+    }
+  }
+
+  .keyword-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $transparent-grey;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .keyword{
+    font-size: 12px;
+    color: #fff;
+  }
+
+  .project-details {
+    display: none;
+  }
+
+  .project-title,
   .description,
   .sub-title,
-  .sub-item,
-  .keyword{
-    font-size: 16px;
+  .sub-item {
+//    todo
   }
 
-  .description,
-  .sub-title{
-    font-size: 16px;
-    margin-top: 8px;
-  }
 
-  .image {
-    width: 300px;
-    height: auto;
-    position: absolute;
-    top: 8px;
-    left: 8px;
-  }
 
   .keyword {
     display: inline;
@@ -72,9 +100,6 @@
   .sub-item {
     margin-top: 4px;
   }
-
-
-
 
 
 }

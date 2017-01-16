@@ -4,8 +4,6 @@
         return { projectData: App.Stores.ProjectStore.getAll() };
     }
 
-
-
     App.Components.MainSection = React.createClass({
 
         getInitialState: function () {
@@ -27,6 +25,7 @@
 
             return (
                 <section id="main">
+                    <h2 className="sub-title">Projects</h2>
                     <App.Components.ProjectList data={projectData}/>
                 </section>
                 );

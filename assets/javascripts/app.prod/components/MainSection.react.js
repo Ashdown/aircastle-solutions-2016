@@ -4,8 +4,6 @@
         return { projectData: App.Stores.ProjectStore.getAll() };
     }
 
-
-
     App.Components.MainSection = React.createClass({displayName: "MainSection",
 
         getInitialState: function () {
