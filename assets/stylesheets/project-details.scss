@@ -1,0 +1,74 @@
+@import 'variables';
+
+.project-details {
+
+  display: none;
+  position: absolute;
+  top: -56px;
+  right: -16px;
+  left: -16px;
+  padding: 0 16px;
+  z-index: 5;
+  background-color: $transparent-grey;
+  color: #fff;
+
+  &.open {
+    display: block;
+  }
+
+  .project-title {
+    font-size: 20px;
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .close-link {
+    position: absolute;
+    top: 8px;
+    right: 4px;
+  }
+
+  .close-svg {
+    height: 20px;
+    width: 20px;
+
+    .path {
+      fill: #fff;
+    }
+  }
+
+  &.open .keyword-container {
+    padding-top: 4px;
+    position: static;
+    background-color: transparent;
+  }
+
+  .details-image {
+    height: 74px;
+    width: auto;
+  }
+
+  .sub-item {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 16px;
+  }
+
+  .end-date,
+  .description {
+    display: none;
+  }
+
+  .project-link {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .project-title,
+  .description,
+  .sub-title,
+  .sub-item {
+    //    todo
+  }
+
+}

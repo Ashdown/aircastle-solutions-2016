@@ -7,7 +7,7 @@ feature 'projects' do
     expect(page).to have_text('My Portfolio')
   end
 
-  scenario ' should list projects', js:true do
+  scenario 'should list projects', js:true do
     visit '/'
     within('.project-list') do
       expect(page).to have_text('First Project')

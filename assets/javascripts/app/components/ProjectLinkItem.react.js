@@ -14,7 +14,7 @@
 
             return (
                 <li className="sub-item">
-                    <a href={url}>{text}</a>
+                    <a className="project-link" href={url}>{text}</a>
                 </li>
                 );
 

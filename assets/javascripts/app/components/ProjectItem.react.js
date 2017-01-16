@@ -2,45 +2,38 @@
 
     App.Components.ProjectItem = React.createClass({displayName: "ProjectItem",
 
+        getInitialState: function() {
+          return({
+              detailsToggleClass: 'closed'
+          });
+        },
+
         propTypes: {
             data: React.PropTypes.object.isRequired
+        },
+
+        toggleDetails: function(event) {
+            event.preventDefault();
+            this.setState({
+                detailsToggleClass: this.state.detailsToggleClass === 'closed' ? 'open' : 'closed'
+            });
         },
 
         render: function() {
             var data = this.props.data;
 
-            var links = [];
 
-            for(var i = 0; i < data.links.length; i++) {
-                links.push(<App.Components.ProjectLinkItem text={data.links[i].text} url={data.links[i].url} />)
-            }
-
-            var keywords = [];
-
-            for(var i = 0; i < data.keywords.length; i++) {
-                keywords.push(<li className="keyword">{data.keywords[i]}</li>);
-            }
 
             return(
                 <li className={"project-item invisible " + data.type}>
                     <div className="container">
-                        <div className="project-details">
-                            <h2 className="project-title">{data.title}</h2>
-                            <p className="description">{data.description}</p>
-                            <h3 className="sub-title">Links</h3>
-                            <ul>{links}</ul>
-                            <h3 className="sub-title" >Start Date</h3>
-                            <p className="sub-item">{data.start}</p>
-                            <h3 className="sub-title" >End Date</h3>
-                            <p className="sub-item">{data.end}</p>
+                        <a className="details-link" onClick={this.toggleDetails} href="#"></a>
+                        <App.Components.ProjectDetails data={data} toggleClass={this.state.detailsToggleClass}  toggleFunction={this.toggleDetails}/>
+
+                        <div className="image-container">
+                            <img className="image" src={data.image.src} alt={data.image.alt} height={data.image.height} width={data.image.width} />
                         </div>
-
-                        <img className="image" src={data.image.src} alt={data.image.alt} height={data.image.height} width={data.image.width} />
-
-                        <div className="keyword-container">
-                            <ul>{keywords}</ul>
-                        </div>
-
+                        <App.Components.KeywordContainer data={data} />
 
                     </div>
                 </li>

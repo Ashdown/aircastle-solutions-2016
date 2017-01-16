@@ -2,8 +2,6 @@
 
     App.Components.Navigation = React.createClass({
 
-        menuToggleClass: 'closed',
-
         getInitialState: function() {
             return({
                 menuToggleClass: 'closed'
@@ -14,7 +12,7 @@
             event.preventDefault();
             this.setState({
                 menuToggleClass: (this.state.menuToggleClass === 'closed') ? 'open' : 'closed'
-                });
+            });
         },
 
         render: function() {
