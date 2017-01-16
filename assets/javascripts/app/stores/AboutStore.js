@@ -1,41 +1,32 @@
 (function(React, App, assign){
 
-    var CHANGE_EVENT_STRING = 'project_change';
+    var CHANGE_EVENT_STRING = 'about_change';
     var CHANGE_EVENT = new Event(CHANGE_EVENT_STRING);
-    var _projects = [];
+    var _about = {};
 
     /**
-     * Create a project
-     * @param {object} data the raw data for this project
+     * Create the about object
+     * @param {object} data the raw data
      */
 
     function create(data) {
-        //use timestamp as the id
-        var id = Date.now();
-        _projects.push({
-            id: id,
-            title: data.title,
-            type: data.type,
+        _about = {
             description: data.description,
             image: {
                 src: data.picture.url,
                 alt: data.picture.alt,
                 height: data.picture.height,
                 width: data.picture.width
-            },
-            links: data.links,
-            keywords: data.keywords,
-            start: data.startDate,
-            end: data.endDate
-        });
+            }
+        };
     }
 
-    App.Stores.ProjectStore = function(){};
+    App.Stores.AboutStore = function(){};
 
-    App.Stores.ProjectStore = assign({}, App.Stores.ProjectStore.prototype, {
+    App.Stores.AboutStore = assign({}, App.Stores.AboutStore.prototype, {
 
-        getAll: function() {
-            return _projects;
+        getContent: function() {
+            return _about;
         },
 
         addChangeListener: function(callback) {
@@ -55,11 +46,10 @@
             var data;
 
             switch (action.actionType) {
-
-                case App.Constants.ProjectConstants.CREATE_PROJECT:
+                case App.Constants.AboutConstants.CREATE_ABOUT:
                     data = action.data;
                     create(data);
-                    App.Stores.ProjectStore.emitChange();
+                    App.Stores.AboutStore.emitChange();
                     break;
             }
 

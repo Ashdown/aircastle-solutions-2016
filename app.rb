@@ -16,3 +16,8 @@ get '/api/test/projects/' do
   content_type :json
   File.read('features/data/projects.json');
 end
+
+get '/api/test/about/' do
+  content_type :json
+  File.read('features/data/about.json');
+end

@@ -1,6 +1,6 @@
 (function(React, App, assign){
 
-    var CHANGE_EVENT_STRING = 'change';
+    var CHANGE_EVENT_STRING = 'project_change';
     var CHANGE_EVENT = new Event(CHANGE_EVENT_STRING);
     var _projects = [];
 
@@ -55,7 +55,8 @@
             var data;
 
             switch (action.actionType) {
-                case App.Constants.ProjectConstants.CREATE:
+
+                case App.Constants.ProjectConstants.CREATE_PROJECT:
                     data = action.data;
                     create(data);
                     App.Stores.ProjectStore.emitChange();

@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-feature 'homepage' do
+feature 'projects' do
 
   scenario 'should show project module', js:true do
     visit '/'

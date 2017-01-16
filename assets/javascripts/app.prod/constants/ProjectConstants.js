@@ -1,5 +1,5 @@
 (function(App, keyMirror) {
     App.Constants.ProjectConstants= keyMirror({
-        CREATE: null
+        CREATE_PROJECT: null
     });
 })(App, keyMirror);

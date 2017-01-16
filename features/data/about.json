@@ -1,0 +1,9 @@
+{
+    "picture": {
+        "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
+        "alt": "Lorem Ipsum",
+        "height": "400",
+        "width": "400"
+    },
+    "description": "Lorem ipsum dolar sit amet"
+}

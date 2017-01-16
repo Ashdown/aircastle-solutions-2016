@@ -13,7 +13,7 @@
 
                 for(var i = 0; i < data.projects.length; i++) {
                     App.Dispatcher.handleViewAction({
-                        actionType: App.Constants.ProjectConstants.CREATE,
+                        actionType: App.Constants.ProjectConstants.CREATE_PROJECT,
                         data: data.projects[i]
                     });
                 }
