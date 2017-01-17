@@ -7,7 +7,7 @@
   top: -56px;
   right: -16px;
   left: -16px;
-  padding: 0 16px 8px 16px;
+  padding: 0 16px 16px 16px;
   z-index: 5;
   background-color: $transparent-grey;
   color: #fff;
@@ -38,9 +38,10 @@
   }
 
   &.open .keyword-container {
-    padding-top: 4px;
     position: static;
     background-color: transparent;
+    padding-top: 0;
+    padding-bottom: 12px;
   }
 
   .details-image {
@@ -62,6 +63,7 @@
   .project-link {
     text-decoration: none;
     color: #fff;
+    font-size: 11px;
   }
 
   .big & {
@@ -90,12 +92,13 @@
 
     .description {
       display: block;
-      margin: 12px 16px 0 16px;
+      margin: 8px 16px 0 16px;
       font-size: 12px;
       line-height: 14px;
     }
 
     .project-link-list {
+      margin-top: 12px;
       text-align: center;
     }
 
