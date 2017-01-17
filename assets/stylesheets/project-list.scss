@@ -12,3 +12,10 @@
 
   }
 }
+
+@include respond-to(desktop) {
+  .project-list {
+    margin: 32px 13px 0 13px;
+
+  }
+}

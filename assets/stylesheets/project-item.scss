@@ -119,29 +119,49 @@
 
     &.small {
 
-      $container-height: 100px;
-
-      .container {
-        height: 100px;
-      }
-
+      .container,
       .image {
-        height: $container-height;
+        height: 100px;
       }
     }
 
     &.big {
 
-      $container-height: 208px;
-
-      .container {
-        height: $container-height;
-      }
+      .container,
       .image {
-        height: $container-height;
+        height: 208px;
       }
     }
 
   }
+
+}
+
+@include respond-to(desktop) {
+  .project-item {
+    &.small {
+
+      .container,
+      .image {
+        height: 164px;
+      }
+
+    }
+
+    &.big {
+
+      .container,
+      .image {
+        height: 336px;
+      }
+    }
+    .keyword-container {
+      padding: 16px;
+    }
+    .keyword {
+      font-size: 16px;
+    }
+  }
+
 
 }
