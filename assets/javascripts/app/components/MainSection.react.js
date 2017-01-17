@@ -34,7 +34,7 @@
         render: function () {
 
             return (
-                <section id="main">
+                <section id="main" className="main-section">
                     <h2 className="sub-title">My Portfolio</h2>
                     <App.Components.ProjectList data={this.state.projectData}/>
                     <h2 className="sub-title">About</h2>
