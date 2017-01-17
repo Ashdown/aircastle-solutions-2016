@@ -13,7 +13,7 @@
             var text = this.props.text;
 
             return (
-                <li className="sub-item">
+                <li className="project-link-item">
                     <a className="project-link" href={url}>{text}</a>
                 </li>
                 );
