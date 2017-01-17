@@ -16,6 +16,7 @@
     color: $grey;
     font-style: italic;
     font-size: 16px;
+    line-height: 18px;
     margin: 16px 8px 0 8px;
     text-align:center;
   }
@@ -30,6 +31,20 @@
     .description {
       margin-left: 144px;
       margin-right: 144px;
+    }
+  }
+}
+
+@include respond-to(desktop) {
+  .about {
+    .about-image {
+      margin-top: 24px;
+      width: 120px;
+      height: 120px;
+    }
+    .description {
+      margin: 32px 360px 0 360px;
+
     }
   }
 }

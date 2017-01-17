@@ -30,3 +30,14 @@
     margin-right: 184px;
   }
 }
+
+@include respond-to(desktop) {
+  .link-list {
+    margin: 24px 360px 0 360px;
+
+    .link {
+      margin-top: 16px;
+    }
+
+  }
+}
