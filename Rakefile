@@ -35,5 +35,11 @@ task :compilejsx do
   `jsx --no-cache-dir assets/javascripts/app assets/javascripts/app.prod`
 end
 
+desc 'compile and run feature tests'
+task :feature_test do
+  Rake::Task["compilejsx"].execute
+  Rake::Task["feature"].execute
+end
+
 task :default=>[:spec, :feature, :jshint, :'jasmine:ci', :compilejsx]
 
