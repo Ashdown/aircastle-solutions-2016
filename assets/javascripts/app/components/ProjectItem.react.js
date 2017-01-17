@@ -1,5 +1,15 @@
 (function(react, app, window) {
 
+    var getScreenType = function() {
+        if(window.innerWidth >= 1024) {
+            return 'desktop';
+        } else if(window.innerWidth >= 640) {
+            return 'tablet';
+        } else {
+            return 'mobile';
+        }
+    };
+
     App.Components.ProjectItem = React.createClass({displayName: "ProjectItem",
 
         getInitialState: function() {
@@ -19,9 +29,28 @@
             var listWidth = window.innerWidth - 8,
                 columnClass = 'column-one';
 
-            if(this.refs.item.getDOMNode().offsetLeft >= listWidth/2) {
-                columnClass = 'column-two'
+            switch(getScreenType(window)) {
+                case 'mobile':
+                    if(this.refs.item.getDOMNode().offsetLeft >= listWidth/2) {
+                        columnClass = 'column-two'
+                    }
+                    break;
+                case 'tablet':
+                case 'desktop':
+
+                    var columnWidth = listWidth/3;
+
+                    if(this.refs.item.getDOMNode().offsetLeft >= columnWidth) {
+                        if(this.refs.item.getDOMNode().offsetLeft >= columnWidth * 2) {
+                            columnClass = 'column-three'
+                        } else {
+                            columnClass = 'column-two'
+                        }
+                    }
+                    break;
             }
+
+
 
             this.setState({
                 detailsToggleClass: this.state.detailsToggleClass === 'closed' ? 'open' : 'closed',

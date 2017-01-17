@@ -29,6 +29,8 @@
     right: 4px;
   }
 
+
+
   .close-svg {
     height: 20px;
     width: 20px;
@@ -118,6 +120,13 @@
 
   }
 
+  .small &.column-two {
+    .close-link {
+      left: 4px;
+      right: auto;
+    }
+  }
+
   .big &.column-two {
     left: -100%;
     right: 0;
@@ -133,7 +142,23 @@
     .details-image {
       height: 100px;
     }
-    .big & {
+
+    .small &.column-two {
+      .close-link {
+        right: 4px;
+        left: auto;
+      }
+    }
+
+    .small &.column-three {
+      .close-link {
+        right: auto;
+        left: 4px;
+      }
+    }
+
+    .big &,
+    .big &.column-two{
 
       right: -210%;
       left: -10%;
@@ -146,6 +171,20 @@
 
       .details-image {
         height: 208px;
+      }
+    }
+
+    .big &.column-two {
+      right: -110%;
+      left: -110%;
+    }
+    .big &.column-three {
+      right: -10%;
+      left: -210%;
+      padding-left: 3%;
+      padding-right: 3%;
+      .close-link {
+        right: 36px;
       }
     }
   }
