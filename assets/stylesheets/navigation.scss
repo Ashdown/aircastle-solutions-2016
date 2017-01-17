@@ -45,3 +45,33 @@
     }
   }
 }
+
+@include respond-to(desktop) {
+  .navigation {
+    .menu-link {
+      display: none;
+    }
+    .navigation-list {
+      display: block;
+      top: 56px;
+      right: 16px;
+      left: auto;
+      text-align: right;
+      padding-top: 0;
+      background-color: transparent;;
+    }
+
+    .navigation-item {
+      display: inline-block;
+    }
+
+    .navigation-link {
+      display: inline-block;
+      font-size: 24px;
+      color: $grey;
+      border-bottom: solid 2px $grey;
+      padding-bottom: 4px;
+      margin: 0 16px;
+    }
+  }
+}

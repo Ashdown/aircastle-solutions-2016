@@ -3,7 +3,7 @@
     App.Components.NavigationItem = React.createClass({
         render: function() {
             return (
-                <li>
+                <li className="navigation-item">
                     <a className="navigation-link" href={this.props.url}>{this.props.text}</a>
                 </li>
 
