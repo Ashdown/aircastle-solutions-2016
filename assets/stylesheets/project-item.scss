@@ -111,3 +111,37 @@
 
 
 }
+
+@include respond-to(tablet) {
+
+  .project-item {
+    width: 33%;
+
+    &.small {
+
+      $container-height: 100px;
+
+      .container {
+        height: 100px;
+      }
+
+      .image {
+        height: $container-height;
+      }
+    }
+
+    &.big {
+
+      $container-height: 208px;
+
+      .container {
+        height: $container-height;
+      }
+      .image {
+        height: $container-height;
+      }
+    }
+
+  }
+
+}

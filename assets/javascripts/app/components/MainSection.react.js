@@ -1,4 +1,4 @@
-(function (React, App, Masonry) {
+(function (React, App) {
 
     function getState() {
 
@@ -51,4 +51,4 @@
         }
     });
 
-})(React, App, Masonry);
+})(React, App);

@@ -1,3 +1,5 @@
+@import 'mixins';
+
 .page {
   max-width: 1200px;
   margin: 0 auto;
@@ -7,5 +9,13 @@
     margin-top: 32px;
     font-size: 20px;
     text-align: center;
+  }
+}
+
+@include respond-to(tablet) {
+  .page {
+    .sub-title {
+      margin-top: 40px;
+    }
   }
 }

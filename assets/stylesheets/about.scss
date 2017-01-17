@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 .about {
   .about-image {
@@ -19,4 +20,16 @@
     text-align:center;
   }
 
+}
+
+@include respond-to(tablet) {
+  .about {
+    .about-image {
+      margin-top: 12px;
+    }
+    .description {
+      margin-left: 144px;
+      margin-right: 144px;
+    }
+  }
 }
