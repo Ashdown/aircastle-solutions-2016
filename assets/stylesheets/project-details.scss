@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 .project-details {
 
@@ -125,4 +126,27 @@
 
   }
 
+}
+
+@include respond-to(tablet) {
+  .project-details {
+    .details-image {
+      height: 100px;
+    }
+    .big & {
+
+      right: -210%;
+      left: -10%;
+      padding-left: 10%;
+      padding-right: 10%;
+
+      .close-link {
+        right: 20px;
+      }
+
+      .details-image {
+        height: 208px;
+      }
+    }
+  }
 }
