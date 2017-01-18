@@ -1,4 +1,20 @@
 $grey: #333;
 $transparent-grey: rgba(51, 51, 51, 0.9);
 
-$grey-box-shadow: 0px 4px 2px 0 rgba(0, 0, 1em, 0.2);
+$grey-box-shadow: 0px 4px 2px 0 rgba(0, 0, 0, 0.2);
+
+$project-image-height: (
+  mobile: (
+      small: 74px,
+      big: 156px
+  ),
+  tablet: (
+      small: 100px,
+      big: 208px
+  ),
+  desktop: (
+      small: 164px,
+      big: 336px
+  )
+
+);

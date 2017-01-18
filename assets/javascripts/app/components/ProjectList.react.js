@@ -64,10 +64,11 @@
         render: function() {
 
             var projectData = this.props.data,
-                projectComponents = [];
+                projectComponents = [],
+                projectList = this;
 
             for(var key in projectData) {
-                projectComponents.push(<App.Components.ProjectItem key={key} data={projectData[key]} />);
+                projectComponents.push(<App.Components.ProjectItem key={key} data={projectData[key]} parentList={projectList} />);
             }
 
             return (<ul className="project-list" ref="project">{projectComponents}</ul>);

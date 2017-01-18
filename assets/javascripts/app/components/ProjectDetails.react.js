@@ -19,12 +19,12 @@
                     </a>
                     <App.Components.KeywordContainer data={data} />
                     <img className="details-image" src={data.image.src} alt={data.image.alt} height={data.image.height} width={data.image.width} />
-                    <p className="sub-item">
+                    <p className="dates">
                         <span className="start-date">{data.start}</span>
                         <span className="end-date"> → {data.end}</span>
                     </p>
                     <p className="description sub-item">{data.description}</p>
-                    <ul className="project-link-list sub-item">{links}</ul>
+                    <ul className="project-link-list">{links}</ul>
 
                 </div>
                 );

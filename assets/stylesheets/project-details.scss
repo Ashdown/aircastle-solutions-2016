@@ -29,8 +29,6 @@
     right: 4px;
   }
 
-
-
   .close-svg {
     height: 20px;
     width: 20px;
@@ -48,11 +46,11 @@
   }
 
   .details-image {
-    height: 74px;
+    height: map-get(map-get($project-image-height, mobile), small);
     width: auto;
   }
 
-  .sub-item {
+  .dates {
     text-align: center;
     font-size: 12px;
     margin-top: 16px;
@@ -61,6 +59,10 @@
   .end-date,
   .description {
     display: none;
+  }
+
+  .project-link-list {
+    text-align: center;
   }
 
   .project-link {
@@ -82,7 +84,7 @@
     }
 
     .details-image {
-      height: 156px;
+      height: map-get(map-get($project-image-height, mobile), big);
     }
 
     .sub-item {
@@ -140,7 +142,7 @@
 @include respond-to(tablet) {
   .project-details {
     .details-image {
-      height: 100px;
+      height: map-get(map-get($project-image-height, tablet), small);;
     }
 
     .small &.column-two {
@@ -170,7 +172,7 @@
       }
 
       .details-image {
-        height: 208px;
+        height: map-get(map-get($project-image-height, tablet), big);;
       }
     }
 
@@ -187,5 +189,48 @@
         right: 36px;
       }
     }
+  }
+}
+
+@include respond-to(desktop) {
+  .project-details {
+
+    top: -88px;
+    right: -24px;
+    left: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    .project-title {
+      font-size: 28px;
+      margin-top: 28px;
+    }
+    .keyword-container {
+      margin-top: 4px;
+    }
+    .close-link,
+    .small &.column-three .close-link {
+      top: 32px;
+      right: 12px;
+      left: auto;
+    }
+    .close-svg {
+      width: 24px;
+      height: 24px;
+    }
+    .details-image {
+      height: map-get(map-get($project-image-height, desktop), small);;
+    }
+    .dates {
+      margin-top: 16px;
+      font-size: 16px;
+    }
+    .project-link-list {
+      margin-top: 16px;
+    }
+    .project-link {
+      font-size: 16px;
+    }
+
   }
 }

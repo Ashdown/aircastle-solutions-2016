@@ -1,5 +1,7 @@
 (function(react, app, window) {
 
+    var parentList;
+
     var getScreenType = function() {
         if(window.innerWidth >= 1024) {
             return 'desktop';
@@ -26,7 +28,7 @@
         toggleDetails: function(event) {
             event.preventDefault();
 
-            var listWidth = window.innerWidth - 8,
+            var listWidth = parentList.getDOMNode().offsetWidth; //window.innerWidth - 8,
                 columnClass = 'column-one';
 
             switch(getScreenType(window)) {
@@ -38,10 +40,11 @@
                 case 'tablet':
                 case 'desktop':
 
-                    var columnWidth = listWidth/3;
+                    var columnWidth = listWidth/ 3,
+                        offset = this.refs.item.getDOMNode().offsetLeft + 8;
 
-                    if(this.refs.item.getDOMNode().offsetLeft >= columnWidth) {
-                        if(this.refs.item.getDOMNode().offsetLeft >= columnWidth * 2) {
+                    if(offset >= columnWidth) {
+                        if(offset >= columnWidth * 2) {
                             columnClass = 'column-three'
                         } else {
                             columnClass = 'column-two'
@@ -49,8 +52,6 @@
                     }
                     break;
             }
-
-
 
             this.setState({
                 detailsToggleClass: this.state.detailsToggleClass === 'closed' ? 'open' : 'closed',
@@ -60,6 +61,7 @@
 
         render: function() {
             var data = this.props.data;
+            parentList = this.props.parentList;
 
             return(
                 <li className={"project-item invisible " + data.type} ref="item">

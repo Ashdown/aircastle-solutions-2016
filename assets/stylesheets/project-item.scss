@@ -50,27 +50,24 @@
 
   &.big {
 
-    $container-height: 156px;
-
     .container {
-      height: $container-height;
       background-color: #00f;
     }
+
+    .container,
     .image {
-      height: $container-height;
+      height: map-get(map-get($project-image-height, mobile), big);
     }
   }
 
   &.small {
 
-    $container-height: 74px;
-
     .container {
-      height: $container-height;
       background-color: #f00;
     }
+    .container,
     .image {
-      height: $container-height;
+      height: map-get(map-get($project-image-height, mobile), small);
     }
   }
 
@@ -121,7 +118,7 @@
 
       .container,
       .image {
-        height: 100px;
+        height: map-get(map-get($project-image-height, tablet), small);
       }
     }
 
@@ -129,7 +126,7 @@
 
       .container,
       .image {
-        height: 208px;
+        height: map-get(map-get($project-image-height, tablet), big);
       }
     }
 
@@ -143,7 +140,7 @@
 
       .container,
       .image {
-        height: 164px;
+        height: map-get(map-get($project-image-height, desktop), small);
       }
 
     }
@@ -152,7 +149,7 @@
 
       .container,
       .image {
-        height: 336px;
+        height: map-get(map-get($project-image-height, desktop), big);
       }
     }
     .keyword-container {
@@ -162,6 +159,5 @@
       font-size: 16px;
     }
   }
-
 
 }

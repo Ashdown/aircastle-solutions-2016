@@ -1,5 +1,14 @@
+@import 'mixins';
+
 .main-section {
   overflow: hidden;
   max-width: 1056px;
   margin: 0 auto;
 }
+
+@include respond-to(desktop) {
+  .main-section {
+    overflow: visible;
+  }
+}
+
