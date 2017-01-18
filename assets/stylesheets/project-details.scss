@@ -233,8 +233,9 @@
       font-size: 16px;
     }
 
-    $list-width: $max-page-width - 32px;
-    $column-width: (($list-width - 16) / 3) + 4px;
+    //$list-width: $max-page-width - 32px;
+    $list-width: 1030px;
+    $column-width: $list-width * 0.333;
 
     .big &,
     .big &.column-two,
@@ -244,9 +245,11 @@
       left: -$list-width;
       right: - (2 * $column-width) - $list-width;
       padding: 0 0 48px 0;
+      margin-left: 0;
+      margin-right: 0;
 
       .details-container {
-        width: $list-width;
+        width: $list-width - 8px;
         margin: 0 auto;
         position: relative;
       }
