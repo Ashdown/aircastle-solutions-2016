@@ -1,4 +1,4 @@
-(function (React, App, Masonry) {
+(function (React, App) {
 
     function getState() {
 
@@ -34,7 +34,7 @@
         render: function () {
 
             return (
-                React.createElement("section", {id: "main"}, 
+                React.createElement("section", {id: "main", className: "main-section"}, 
                     React.createElement("h2", {className: "sub-title"}, "My Portfolio"), 
                     React.createElement(App.Components.ProjectList, {data: this.state.projectData}), 
                     React.createElement("h2", {className: "sub-title"}, "About"), 
@@ -51,4 +51,4 @@
         }
     });
 
-})(React, App, Masonry);
+})(React, App);
