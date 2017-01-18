@@ -1,8 +1,9 @@
+@import 'variables';
 @import 'mixins';
 
 .main-section {
   overflow: hidden;
-  max-width: 1056px;
+  max-width: $max-page-width;
   margin: 0 auto;
 }
 

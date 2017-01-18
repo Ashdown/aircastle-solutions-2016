@@ -100,6 +100,7 @@
       margin: 8px 16px 0 16px;
       font-size: 12px;
       line-height: 14px;
+      text-align: center;
     }
 
     .project-link-list {
@@ -219,7 +220,7 @@
       height: 24px;
     }
     .details-image {
-      height: map-get(map-get($project-image-height, desktop), small);;
+      height: map-get(map-get($project-image-height, desktop), small);
     }
     .dates {
       margin-top: 16px;
@@ -230,6 +231,56 @@
     }
     .project-link {
       font-size: 16px;
+    }
+
+    $list-width: $max-page-width - 32px;
+    $column-width: (($list-width - 16) / 3) + 4px;
+
+    .big &,
+    .big &.column-two,
+    .big &.column-three{
+
+      top: -96px;
+      left: -$list-width;
+      right: - (2 * $column-width) - $list-width;
+      padding: 0 0 48px 0;
+
+      .details-container {
+        width: $list-width;
+        margin: 0 auto;
+        position: relative;
+      }
+      .close-link {
+        top: 0;
+        right: 0;
+      }
+      .keyword-container {
+        margin-top: 8px;
+        padding-bottom: 16px;
+      }
+      .details-image {
+        height: map-get(map-get($project-image-height, desktop), big);
+      }
+      .description {
+        font-size: 16px;
+        line-height: 18px;
+        margin-left: 208px;
+        margin-right: 208px;
+      }
+      .project-link-list {
+        margin-top: 16px;
+      }
+
+    }
+
+    .big &.column-two {
+      left: -($list-width + $column-width);
+      right: -($list-width + $column-width);
+    }
+
+    .big &.column-three {
+      left: - (2 * $column-width) - $list-width;
+      right: -$list-width;
     }
 
   }
