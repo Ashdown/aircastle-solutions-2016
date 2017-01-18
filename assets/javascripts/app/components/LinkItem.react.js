@@ -15,10 +15,10 @@
 
             switch(data.type) {
                 case 'linked-in':
-                    logo = <App.Components.LinkedInSvg/>;
+                    logo = <App.Svg.LinkedInSvg/>;
                     break;
                 case 'github':
-                    logo = <App.Components.GitHubSvg/>;
+                    logo = <App.Svg.GitHubSvg/>;
                     break;
             }
 

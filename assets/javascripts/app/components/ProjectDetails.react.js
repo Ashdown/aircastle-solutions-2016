@@ -16,7 +16,7 @@
                     <div className="details-container">
                         <h2 className="project-title">{data.title}</h2>
                         <a className="close-link" href="#" onClick={this.props.toggleFunction}>
-                            <App.Components.CloseSvg />
+                            <App.Svg.CloseSvg />
                         </a>
                         <App.Components.KeywordContainer data={data} />
                         <img className="details-image" src={data.image.src} alt={data.image.alt} height={data.image.height} width={data.image.width} />

@@ -1,6 +1,6 @@
 (function(React, App){
 
-    App.Components.LinkedInSvg = React.createClass({
+    App.Svg.LinkedInSvg = React.createClass({
         render: function() {
 
             return(

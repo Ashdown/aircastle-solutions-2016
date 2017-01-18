@@ -1,6 +1,6 @@
 (function(React, App){
 
-    App.Components.MenuSvg = React.createClass({
+    App.Svg.MenuSvg = React.createClass({
         render: function() {
 
             return(

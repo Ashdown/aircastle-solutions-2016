@@ -1,6 +1,6 @@
 (function(React, App){
 
-    App.Components.CloseSvg = React.createClass({
+    App.Svg.CloseSvg = React.createClass({
         render: function() {
 
             return(

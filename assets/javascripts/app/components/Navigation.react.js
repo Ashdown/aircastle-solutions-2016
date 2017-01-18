@@ -21,7 +21,7 @@
                 <div className="navigation">
 
                     <a className="menu-link" href="#" onClick={this.toggleMenu}>
-                        <App.Components.MenuSvg menuToggleClass={this.state.menuToggleClass} />
+                        <App.Svg.MenuSvg menuToggleClass={this.state.menuToggleClass} />
                     </a>
 
                     <ul className={"navigation-list " + this.state.menuToggleClass}>

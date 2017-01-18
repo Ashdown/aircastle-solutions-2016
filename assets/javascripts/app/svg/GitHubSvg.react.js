@@ -1,6 +1,6 @@
 (function(React, App){
 
-    App.Components.GitHubSvg = React.createClass({
+    App.Svg.GitHubSvg = React.createClass({
         render: function() {
 
             return(

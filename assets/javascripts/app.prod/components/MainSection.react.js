@@ -35,11 +35,11 @@
 
             return (
                 React.createElement("section", {id: "main", className: "main-section"}, 
-                    React.createElement("h2", {className: "sub-title"}, "My Portfolio"), 
+                    React.createElement("h2", {id: "portfolio", className: "sub-title"}, "My Portfolio"), 
                     React.createElement(App.Components.ProjectList, {data: this.state.projectData}), 
-                    React.createElement("h2", {className: "sub-title"}, "About"), 
+                    React.createElement("h2", {id: "about", className: "sub-title"}, "About"), 
                     React.createElement(App.Components.About, {data: this.state.aboutData}), 
-                    React.createElement("h2", {className: "sub-title"}, "Links"), 
+                    React.createElement("h2", {id: "links", className: "sub-title"}, "Links"), 
                     React.createElement(App.Components.LinkList, {data: this.state.linkData})
                 )
                 );
