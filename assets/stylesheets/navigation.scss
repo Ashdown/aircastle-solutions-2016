@@ -87,8 +87,8 @@
       @include transition(all, 0.2s, linear);
 
       &:hover {
-        color: $highlight-grey;
-        border-color: $highlight-grey;
+        color: $light-grey;
+        border-color: $light-grey;
       }
     }
   }
