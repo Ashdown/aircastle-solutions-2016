@@ -27,11 +27,11 @@
     &.open {
       display: block;
       animation-duration: 0.4s;
-      animation-name: fadein;
+      animation-name: navigation-fadein;
     }
   }
 
-  @keyframes fadein {
+  @keyframes navigation-fadein {
     from {
       opacity: 0;
     }

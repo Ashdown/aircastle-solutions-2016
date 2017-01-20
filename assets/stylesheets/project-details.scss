@@ -10,11 +10,22 @@
   left: -16px;
   padding: 0 16px 16px 16px;
   z-index: 30;
-  background-color: $transparent-grey;
   color: #fff;
+  background-color: $transparent-grey;
+
+  @keyframes project-details-fadein {
+    from {
+      background-color: transparent;
+    }
+    to {
+      background-color: $transparent-grey;
+    }
+  }
 
   &.open {
     display: block;
+    animation-duration: 1s;
+    animation-name: project-details-fadein;
   }
 
   .project-title {
@@ -32,9 +43,25 @@
   .close-svg {
     height: 20px;
     width: 20px;
+    border: 2px solid transparent;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-top: -2px;
+    margin-left: -2px;
 
     .path {
       fill: #fff;
+    }
+  }
+
+  .close-link:hover {
+
+    .close-svg {
+      background-color: $white;
+    }
+
+    .path {
+      fill: $grey;
     }
   }
 
@@ -67,8 +94,11 @@
 
   .project-link {
     text-decoration: none;
-    color: #fff;
+    color: $white;
     font-size: 11px;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .big & {
@@ -286,4 +316,5 @@
     }
 
   }
+
 }

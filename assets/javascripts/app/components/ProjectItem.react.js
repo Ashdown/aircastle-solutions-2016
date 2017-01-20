@@ -17,12 +17,21 @@
         getInitialState: function() {
           return({
               detailsToggleClass: 'closed',
-              columnClass: ''
+              columnClass: '',
+              itemStateClass: ''
           });
         },
 
         propTypes: {
             data: React.PropTypes.object.isRequired
+        },
+
+        hoverItem: function() {
+            if(this.state.detailsToggleClass === 'closed' ) {
+                this.setState({
+                    itemStateClass: this.state.itemStateClass === '' ? 'hover' : ''
+                });
+            }
         },
 
         toggleDetails: function(event) {
@@ -55,7 +64,8 @@
 
             this.setState({
                 detailsToggleClass: this.state.detailsToggleClass === 'closed' ? 'open' : 'closed',
-                columnClass: columnClass
+                columnClass: columnClass,
+                itemStateClass: this.state.detailsToggleClass === 'closed' ? 'active' : ''
             });
         },
 
@@ -64,9 +74,9 @@
             parentList = this.props.parentList;
 
             return(
-                <li className={"project-item invisible " + data.type} ref="item">
+                <li className={"project-item invisible " + data.type + ' ' + this.state.itemStateClass} ref="item">
                     <div className="container">
-                        <a className="details-link" onClick={this.toggleDetails} href="#"></a>
+                        <a className="details-link" onClick={this.toggleDetails} onMouseEnter={this.hoverItem} onMouseLeave={this.hoverItem} href="#"></a>
                         <App.Components.ProjectDetails
                             data={data}
                             toggleClass={this.state.detailsToggleClass}
