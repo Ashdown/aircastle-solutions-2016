@@ -7,8 +7,8 @@
 
             var keywords = [];
 
-            for(var i = 0; i < data.keywords.length; i++) {
-                keywords.push(<li className="keyword">{data.keywords[i]}</li>);
+            for(var key in data.keywords) {
+                keywords.push(<li key={key} className="keyword">{data.keywords[key]}</li>);
             }
 
             return (

@@ -3,8 +3,8 @@
     App.Components.ProjectLinkItem = React.createClass({displayName: "ProjectLinkItem",
 
         propTypes: {
-            text: React.PropTypes.object.isRequired,
-            url: React.PropTypes.object.isRequired
+            text: React.PropTypes.string.isRequired,
+            url: React.PropTypes.string.isRequired
         },
 
         render:function() {

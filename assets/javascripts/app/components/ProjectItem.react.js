@@ -1,4 +1,4 @@
-(function(react, app, window) {
+(function(react, app, window, helpers) {
 
     var parentList;
 
@@ -25,22 +25,12 @@
 
         propTypes: {
             data: React.PropTypes.object.isRequired,
-            parentList: React.PropTypes.object.isRequired,
-            checkForFadeIn: React.PropTypes.object.isRequired
-        },
-
-        getPageScrollTop: function() {
-            var doc = document.documentElement;
-            return (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
-        },
-
-        getPageScrollBottom: function() {
-            return this.getPageScrollTop() + window.innerHeight;
+            parentList: React.PropTypes.object.isRequired
         },
 
         checkForFadeIn: function() {
 
-            var pageScrollBottom = this.getPageScrollBottom(),
+            var pageScrollBottom = helpers.getPageScrollBottom(),
                 bottomPositionOfItem =  this.refs.item.getDOMNode().offsetTop + 16 + this.props.parentList.getDOMNode().offsetTop;
 
             if( pageScrollBottom >= bottomPositionOfItem) {
@@ -129,4 +119,4 @@
         }
     })
 
-})(React, App, window);
+})(React, App, window, helpers);

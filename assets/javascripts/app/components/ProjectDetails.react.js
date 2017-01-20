@@ -7,8 +7,8 @@
 
             var links = [];
 
-            for(var i = 0; i < data.links.length; i++) {
-                links.push(<App.Components.ProjectLinkItem text={data.links[i].text} url={data.links[i].url} />)
+            for(var key in data.links) {
+                links.push(<App.Components.ProjectLinkItem key={key} text={data.links[key].text} url={data.links[key].url} />)
             }
 
             return(
