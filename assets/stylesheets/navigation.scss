@@ -14,6 +14,7 @@
     top: 0;
     padding: 12px;
     z-index: 10;
+
   }
 
   .navigation-list {
@@ -25,6 +26,17 @@
     display: none;
     &.open {
       display: block;
+      animation-duration: 0.4s;
+      animation-name: fadein;
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 
