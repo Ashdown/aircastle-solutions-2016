@@ -18,12 +18,37 @@
           return({
               detailsToggleClass: 'closed',
               columnClass: '',
-              itemStateClass: ''
+              itemStateClass: '',
+              visibleClass: 'invisible'
           });
         },
 
         propTypes: {
-            data: React.PropTypes.object.isRequired
+            data: React.PropTypes.object.isRequired,
+            parentList: React.PropTypes.object.isRequired,
+            checkForFadeIn: React.PropTypes.object.isRequired
+        },
+
+        getPageScrollTop: function() {
+            var doc = document.documentElement;
+            return (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+        },
+
+        getPageScrollBottom: function() {
+            return this.getPageScrollTop() + window.innerHeight;
+        },
+
+        checkForFadeIn: function() {
+
+            var pageScrollBottom = this.getPageScrollBottom(),
+                bottomPositionOfItem =  this.refs.item.getDOMNode().offsetTop + 16 + this.props.parentList.getDOMNode().offsetTop;
+
+            if( pageScrollBottom >= bottomPositionOfItem) {
+                this.setState({
+                    'visibleClass': ''
+                });
+
+            }
         },
 
         hoverItem: function() {
@@ -69,12 +94,22 @@
             });
         },
 
+        componentDidMount: function() {
+            window.addEventListener('scroll', this.checkForFadeIn);
+            this.props.parentList.getDOMNode().addEventListener('gridReady', this.checkForFadeIn);
+        },
+
+        componentWillUnMount: function() {
+            window.removeEventListener('scroll', this.checkForFadeIn);
+            this.props.parentList.getDOMNode().removeEventListener('gridReady', this.checkForFadeIn);
+        },
+
         render: function() {
             var data = this.props.data;
             parentList = this.props.parentList;
 
             return(
-                <li className={"project-item invisible " + data.type + ' ' + this.state.itemStateClass} ref="item">
+                <li className={"project-item " + this.state.visibleClass + " " + data.type + ' ' + this.state.itemStateClass} ref="item">
                     <div className="container">
                         <a className="details-link" onClick={this.toggleDetails} onMouseEnter={this.hoverItem} onMouseLeave={this.hoverItem} href="#"></a>
                         <App.Components.ProjectDetails
