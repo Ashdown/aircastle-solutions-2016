@@ -136,6 +136,10 @@
 
 @include respond-to(desktop) {
   .project-item {
+
+    opacity: 0.75;
+    @include transition(opacity, 0.2s, linear);
+
     &.small {
 
       .container,
@@ -154,9 +158,17 @@
     }
     .keyword-container {
       padding: 16px;
+      @include transition(padding, 0.2s, linear);
     }
     .keyword {
       font-size: 16px;
+    }
+    &:hover {
+      opacity: 1;
+      .keyword-container {
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
     }
   }
 
