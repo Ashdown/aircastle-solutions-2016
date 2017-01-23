@@ -109,7 +109,7 @@
                             columnClass={this.state.columnClass} />
 
                         <div className="image-container">
-                            <img className="image" src={data.image.src} alt={data.image.alt} height={data.image.height} width={data.image.width} />
+                            <App.Components.ProjectImage data={data.images[0]} extraClass="image" />
                         </div>
                         <App.Components.KeywordContainer data={data} />
 

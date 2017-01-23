@@ -19,7 +19,7 @@
                             <App.Svg.CloseSvg />
                         </a>
                         <App.Components.KeywordContainer data={data} />
-                        <img className="details-image" src={data.image.src} alt={data.image.alt} height={data.image.height} width={data.image.width} />
+                        <App.Components.ProjectImage data={data.images[0]} extraClass="details-image"/>
                         <p className="dates">
                             <span className="start-date">{data.start}</span>
                             <span className="end-date"> → {data.end}</span>
