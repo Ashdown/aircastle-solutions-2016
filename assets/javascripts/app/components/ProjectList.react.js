@@ -1,6 +1,7 @@
 (function(React, App, Masonry) {
 
-    var projectGrid;
+    var projectGrid,
+        updateGridTimeout;
 
     App.Components.ProjectList = React.createClass({
 
@@ -10,9 +11,14 @@
                 projectList = React.findDOMNode(this);
 
             if(projectGrid === undefined) {
+
                 projectGrid = new Masonry('.project-list', {
                     itemSelector: '.project-item',
                     transitionDuration: 0
+                });
+
+                projectGrid.on('layoutComplete', function() {
+                    projectList.dispatchEvent(layoutCompleteEvent);
                 });
 
             } else {
@@ -20,12 +26,16 @@
                 var projectItems = projectList.getElementsByClassName('project-item');
 
                 if(projectGrid.getItemElements().length < projectItems.length) {
+
                     projectGrid.appended(projectItems[projectItems.length - 1]);
+
+                    window.clearTimeout(updateGridTimeout)
+                    updateGridTimeout = window.setTimeout(function() {
+                        projectGrid.layout();
+                    }, 100);
+
                 }
             }
-            projectGrid.on('layoutComplete', function() {
-                projectList.dispatchEvent(layoutCompleteEvent);
-            });
 
         },
 
