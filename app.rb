@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'slim'
 require 'json'
+require 'sinatra/jsonp';
 Dir[File.join(File.dirname(__FILE__), './lib/helpers', '*.rb')].each {|file| require file }
 Dir[File.join(File.dirname(__FILE__), './lib/models', '*.rb')].each {|file| require file }
 
@@ -13,8 +14,9 @@ get '/' do
 end
 
 get '/api/test/projects/' do
-  content_type :json
-  File.read('features/data/projects.json');
+  file = File.read('features/data/projects.json');
+  data = JSON.parse(file);
+  jsonp data
 end
 
 get '/api/test/about/' do

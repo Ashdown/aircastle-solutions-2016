@@ -17,12 +17,7 @@
             title: data.title,
             type: data.type,
             description: data.description,
-            image: {
-                src: data.picture.url,
-                alt: data.picture.alt,
-                height: data.picture.height,
-                width: data.picture.width
-            },
+            images: data.pictures,
             links: data.links,
             keywords: data.keywords,
             start: data.startDate,

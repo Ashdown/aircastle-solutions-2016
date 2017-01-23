@@ -1,4 +1,4 @@
-(function(react, app, window) {
+(function(react, app, window, helpers) {
 
     var parentList;
 
@@ -17,12 +17,36 @@
         getInitialState: function() {
           return({
               detailsToggleClass: 'closed',
-              columnClass: ''
+              columnClass: '',
+              itemStateClass: '',
+              visibleClass: 'invisible'
           });
         },
 
         propTypes: {
-            data: React.PropTypes.object.isRequired
+            data: React.PropTypes.object.isRequired,
+            parentList: React.PropTypes.object.isRequired
+        },
+
+        checkForFadeIn: function() {
+
+            var pageScrollBottom = helpers.getPageScrollBottom(),
+                bottomPositionOfItem =  this.refs.item.getDOMNode().offsetTop + 16 + this.props.parentList.getDOMNode().offsetTop;
+
+            if( pageScrollBottom >= bottomPositionOfItem) {
+                this.setState({
+                    'visibleClass': ''
+                });
+
+            }
+        },
+
+        hoverItem: function() {
+            if(this.state.detailsToggleClass === 'closed' ) {
+                this.setState({
+                    itemStateClass: this.state.itemStateClass === '' ? 'hover' : ''
+                });
+            }
         },
 
         toggleDetails: function(event) {
@@ -55,8 +79,19 @@
 
             this.setState({
                 detailsToggleClass: this.state.detailsToggleClass === 'closed' ? 'open' : 'closed',
-                columnClass: columnClass
+                columnClass: columnClass,
+                itemStateClass: this.state.detailsToggleClass === 'closed' ? 'active' : ''
             });
+        },
+
+        componentDidMount: function() {
+            window.addEventListener('scroll', this.checkForFadeIn);
+            this.props.parentList.getDOMNode().addEventListener('gridReady', this.checkForFadeIn);
+        },
+
+        componentWillUnMount: function() {
+            window.removeEventListener('scroll', this.checkForFadeIn);
+            this.props.parentList.getDOMNode().removeEventListener('gridReady', this.checkForFadeIn);
         },
 
         render: function() {
@@ -64,9 +99,9 @@
             parentList = this.props.parentList;
 
             return(
-                React.createElement("li", {className: "project-item invisible " + data.type, ref: "item"}, 
+                React.createElement("li", {className: "project-item " + this.state.visibleClass + " " + data.type + ' ' + this.state.itemStateClass, ref: "item"}, 
                     React.createElement("div", {className: "container"}, 
-                        React.createElement("a", {className: "details-link", onClick: this.toggleDetails, href: "#"}), 
+                        React.createElement("a", {className: "details-link", onClick: this.toggleDetails, onMouseEnter: this.hoverItem, onMouseLeave: this.hoverItem, href: "#"}), 
                         React.createElement(App.Components.ProjectDetails, {
                             data: data, 
                             toggleClass: this.state.detailsToggleClass, 
@@ -74,7 +109,7 @@
                             columnClass: this.state.columnClass}), 
 
                         React.createElement("div", {className: "image-container"}, 
-                            React.createElement("img", {className: "image", src: data.image.src, alt: data.image.alt, height: data.image.height, width: data.image.width})
+                            React.createElement(App.Components.ProjectImage, {data: data.images[0], extraClass: "image"})
                         ), 
                         React.createElement(App.Components.KeywordContainer, {data: data})
 
@@ -84,4 +119,4 @@
         }
     })
 
-})(React, App, window);
+})(React, App, window, helpers);

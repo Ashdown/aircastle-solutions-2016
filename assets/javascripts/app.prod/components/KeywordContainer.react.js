@@ -7,8 +7,8 @@
 
             var keywords = [];
 
-            for(var i = 0; i < data.keywords.length; i++) {
-                keywords.push(React.createElement("li", {className: "keyword"}, data.keywords[i]));
+            for(var key in data.keywords) {
+                keywords.push(React.createElement("li", {key: key, className: "keyword"}, data.keywords[key]));
             }
 
             return (

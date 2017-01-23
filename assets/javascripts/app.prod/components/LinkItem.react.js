@@ -11,8 +11,6 @@
             var data = this.props.data,
                 logo;
 
-            console.log(data.type);
-
             switch(data.type) {
                 case 'linked-in':
                     logo = React.createElement(App.Svg.LinkedInSvg, null);

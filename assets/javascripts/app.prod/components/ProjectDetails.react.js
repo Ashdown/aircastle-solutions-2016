@@ -7,8 +7,8 @@
 
             var links = [];
 
-            for(var i = 0; i < data.links.length; i++) {
-                links.push(React.createElement(App.Components.ProjectLinkItem, {text: data.links[i].text, url: data.links[i].url}))
+            for(var key in data.links) {
+                links.push(React.createElement(App.Components.ProjectLinkItem, {key: key, text: data.links[key].text, url: data.links[key].url}))
             }
 
             return(
@@ -19,7 +19,7 @@
                             React.createElement(App.Svg.CloseSvg, null)
                         ), 
                         React.createElement(App.Components.KeywordContainer, {data: data}), 
-                        React.createElement("img", {className: "details-image", src: data.image.src, alt: data.image.alt, height: data.image.height, width: data.image.width}), 
+                        React.createElement(App.Components.ProjectImage, {data: data.images[0], extraClass: "details-image"}), 
                         React.createElement("p", {className: "dates"}, 
                             React.createElement("span", {className: "start-date"}, data.start), 
                             React.createElement("span", {className: "end-date"}, " → ", data.end)
