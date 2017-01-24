@@ -1,5 +1,17 @@
 (function(App, React){
 
+    function clean(text) {
+        return text.replace(/&#8217;/, "'");
+    }
+
+    function breakLine(text) {
+        var regex = /(<br\/>)/g;
+
+        return text.split(regex).map(function(line) {
+            return line.match(regex) ? React.createElement('br') : line;
+        });
+    }
+
     App.Components.ProjectDetails = React.createClass({
         render: function() {
 
@@ -14,7 +26,7 @@
             return(
                 <div className={"project-details " + this.props.toggleClass + ' ' + this.props.columnClass}>
                     <div className="details-container">
-                        <h2 className="project-title">{data.title}</h2>
+                        <h2 className="project-title">{clean(data.title)}</h2>
                         <a className="close-link" href="#" onClick={this.props.toggleFunction}>
                             <App.Svg.CloseSvg />
                         </a>
@@ -24,7 +36,7 @@
                             <span className="start-date">{data.start}</span>
                             <span className="end-date"> → {data.end}</span>
                         </p>
-                        <p className="description sub-item">{data.description}</p>
+                        <p className="description sub-item">{breakLine(data.description)}</p>
                         <ul className="project-link-list">{links}</ul>
                     </div>
 
