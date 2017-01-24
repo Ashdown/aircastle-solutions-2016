@@ -20,9 +20,13 @@
             images: data.pictures,
             links: data.links,
             keywords: data.keywords,
-            start: data.startDate,
-            end: data.endDate
+            start: new Date(data.startDate),
+            end: new Date(data.endDate)
         });
+        //stot by date
+        _projects.sort(function(a, b) {
+            return b.start.getTime() - a.start.getTime();
+        })
     }
 
     App.Stores.ProjectStore = function(){};

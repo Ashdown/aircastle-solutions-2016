@@ -1,5 +1,9 @@
 (function(App, React){
 
+    var monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
     function clean(text) {
         return text.replace(/&#8217;/, "'");
     }
@@ -33,8 +37,8 @@
                         <App.Components.KeywordContainer data={data} />
                         <App.Components.ProjectImage data={data.images[0]} extraClass="details-image"/>
                         <p className="dates">
-                            <span className="start-date">{data.start}</span>
-                            <span className="end-date"> → {data.end}</span>
+                            <span className="start-date">{monthNames[data.start.getMonth()] + ', ' + data.start.getFullYear()}</span>
+                            <span className="end-date"> → {monthNames[data.end.getMonth()] + ', ' + data.end.getFullYear()}</span>
                         </p>
                         <p className="description sub-item">{breakLine(data.description)}</p>
                         <ul className="project-link-list">{links}</ul>
