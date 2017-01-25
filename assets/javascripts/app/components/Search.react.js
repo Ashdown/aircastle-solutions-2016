@@ -3,43 +3,78 @@
     App.Components.Search = React.createClass({
 
         mouseEnter: function() {
-            this.setState({
-                hoverClass: 'hover'
-            });
+            if(this.state.statusClass === 'inactive') {
+                this.setState({
+                    statusClass: 'hover'
+                });
+            }
         },
 
         mouseLeave: function() {
-            this.setState({
-                hoverClass: ''
-            });
+
+            if(this.state.statusClass === 'hover') {
+
+                this.setState({
+                    statusClass: 'inactive'
+                });
+            }
         },
 
-        formClick: function() {
+        formClick: function(event) {
+            if (this.state.statusClass !== 'active') {
+                this.setState({
+                    statusClass: 'active'
+                });
+            } else {
+                this.search(event);
+            }
             this.refs.searchInput.getDOMNode().focus();
-            this.setState({
-                inputStatus: 'input-active'
-            });
+        },
+
+        clickSearchLink: function(event) {
+            event.preventDefault();
+            console.log('click search link');
+            this.search();
         },
 
         inputLeave: function() {
+            //TODO
+        },
+
+        inputChange: function(event) {
+
             this.setState({
-                inputStatus: 'input-inactive'
-            })
+                searchValue: event.target.value
+            });
+        },
+
+        search: function(event) {
+            event.preventDefault();
+            //get value of input
+            console.log('search', this.state.searchValue);
         },
 
         getInitialState: function() {
             return ({
-                hoverClass: '',
-                inputStatus: 'input-inactive'
+                statusClass: 'inactive',
+                searchValue: ''
             });
         },
 
         render: function() {
             return(
-                <div className={"search " + this.state.hoverClass + ' ' + this.state.inputStatus} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} onClick={this.formClick}>
+                <div className={"search " + this.state.statusClass} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} onClick={this.formClick} onSubmit={this.search}>
                     <h3 className="search-title" >Search</h3>
                     <form className="search-form" action="#">
-                        <input className="search-input" onBlur={this.inputLeave} type="text" ref="searchInput"/>
+                        <input className="search-input"
+                            onBlur={this.inputLeave}
+                            onChange={this. inputChange}
+                            type="text"
+                            ref="searchInput"
+                            value={this.state.searchValue}/>
+                        <a onClick={this.clickSearchLink} className="search-link" target="#">
+                            <App.Svg.SearchSvg />
+                        </a>
                         <input className="search-button" type="submit" value="search" />
                     </form>
                 </div>

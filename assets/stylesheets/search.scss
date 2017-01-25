@@ -13,7 +13,6 @@
     font-weight: bold;
     z-index: 100;
     position: relative;
-
   }
 
   .search-form {
@@ -38,8 +37,35 @@
     z-index: -100;
     font-weight: bold;
   }
+
+  .search-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 34px;
+    display: inline-block;
+  }
+
+  .search-svg {
+    height: 20px;
+    width: auto;
+    position: relative;
+    top: 6px;
+    right: 8px;
+  }
+
+  .path {
+    fill: $white;
+  }
+
   .search-button {
     display: none;
+  }
+
+  &.inactive {
+    .search-input {
+      opacity: 0;
+    }
   }
 
   &.hover {
@@ -48,9 +74,7 @@
     }
   }
 
-  &.hover.input-active,
-  &.input-active {
-
+  &.active{
     .search-title {
       opacity: 0;
     }
