@@ -29,14 +29,21 @@
 
                     projectGrid.appended(projectItems[projectItems.length - 1]);
 
-                    window.clearTimeout(updateGridTimeout)
-                    updateGridTimeout = window.setTimeout(function() {
-                        projectGrid.layout();
-                    }, 100);
-
                 }
             }
 
+        },
+
+        componentDidMount: function() {
+            this.getDOMNode().addEventListener('imageLoaded', function() {
+                projectGrid.layout();
+            });
+        },
+
+        componentWillUnMount: function() {
+            this.getDOMNode().removeEventListener('imageLoaded', function() {
+                projectGrid.layout();
+            });
         },
 
         render: function() {

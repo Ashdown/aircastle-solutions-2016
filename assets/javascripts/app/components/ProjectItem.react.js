@@ -106,10 +106,11 @@
                             data={data}
                             toggleClass={this.state.detailsToggleClass}
                             toggleFunction={this.toggleDetails}
-                            columnClass={this.state.columnClass} />
+                            columnClass={this.state.columnClass}
+                            parentList={parentList} />
 
                         <div className="image-container">
-                            <App.Components.ProjectImage data={data.images[0]} extraClass="image" />
+                            <App.Components.ProjectImage data={data.images[0]} extraClass="image" parentList={parentList} />
                         </div>
                         <App.Components.KeywordContainer data={data} />
 

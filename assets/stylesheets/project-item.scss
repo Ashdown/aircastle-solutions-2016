@@ -11,15 +11,16 @@
     border: 1px solid $grey;
     margin: 6px 3px 0 3px;
     opacity: 1;
-    @include transition(all, 0.5s, linear);
+    @include transition(opacity, 0.5s, linear);
+    @include transition(top, 0.5s, linear);
     box-shadow: $grey-box-shadow;
     display: block;
   }
 
   &.invisible {
     .container {
-//      opacity: 0;
-//      top: 32px;
+      opacity: 0;
+      top: 32px;
     }
   }
 

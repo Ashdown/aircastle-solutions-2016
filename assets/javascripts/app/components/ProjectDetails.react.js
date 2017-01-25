@@ -35,7 +35,7 @@
                             <App.Svg.CloseSvg />
                         </a>
                         <App.Components.KeywordContainer data={data} />
-                        <App.Components.ProjectImage data={data.images[0]} extraClass="details-image"/>
+                        <App.Components.ProjectImage data={data.images[0]} extraClass="details-image" parentList={this.props.parentList} />
                         <p className="dates">
                             <span className="start-date">{monthNames[data.start.getMonth()] + ', ' + data.start.getFullYear()}</span>
                             <span className="end-date"> → {monthNames[data.end.getMonth()] + ', ' + data.end.getFullYear()}</span>
