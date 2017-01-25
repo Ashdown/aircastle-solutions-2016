@@ -21,4 +21,14 @@
   transition: $property $duration $type;
 }
 
+@mixin box-sizing($property) {
+  box-sizing: $property; /* css3 rec */
+  -moz-box-sizing: $property; /* ff2 */
+  -ms-box-sizing: $property; /* ie8 */
+  -webkit-box-sizing: $property; /* safari3 */
+  -khtml-box-sizing:$property; /* konqueror */
+}
+
+
+
 

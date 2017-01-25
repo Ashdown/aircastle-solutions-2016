@@ -1,7 +1,7 @@
 @import 'mixins';
 
 .project-list {
-  margin: 4px -3px 0 -3px;
+  margin: 8px -3px 0 -3px;
 }
 
 @include respond-to(tablet) {
