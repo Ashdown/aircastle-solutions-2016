@@ -16,4 +16,10 @@ feature 'projects' do
     end
   end
 
+  scenario 'should show search box', js:true do
+    visit '/'
+    expect(page).to have_text('Search')
+    expect(page).to have_css('input.search-input')
+  end
+
 end

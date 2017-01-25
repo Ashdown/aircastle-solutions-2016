@@ -2,8 +2,8 @@
     App.Actions.Project = {
         get: function() {
 
-            //fetchJsonp('/api/test/projects/')
-            fetchJsonp('http://cms.rorydevane.com/projects/')
+            fetchJsonp('/api/test/projects/')
+            //fetchJsonp('http://cms.rorydevane.com/projects/')
                 .then(function(response) {
                     return response.json();
                 }).then(function(data) {

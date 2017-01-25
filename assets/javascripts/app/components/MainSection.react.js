@@ -36,7 +36,7 @@
             return (
                 <section id="main" className="main-section">
                     <h2 id="portfolio"className="sub-title">My Portfolio</h2>
-                    <App.Components.ProjectList data={this.state.projectData}/>
+                    <App.Components.Portfolio projectData={this.state.projectData}/>
                     <h2 id="about" className="sub-title">About</h2>
                     <App.Components.About data={this.state.aboutData}/>
                     <h2 id="links" className="sub-title">Links</h2>
