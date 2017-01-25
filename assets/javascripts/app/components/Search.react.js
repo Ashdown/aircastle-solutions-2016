@@ -14,31 +14,32 @@
             });
         },
 
-        inputEnter: function() {
+        formClick: function() {
+            this.refs.searchInput.getDOMNode().focus();
             this.setState({
-                inputStatus: 'active'
+                inputStatus: 'input-active'
             });
         },
 
         inputLeave: function() {
             this.setState({
-                inputStatus: 'not-active'
+                inputStatus: 'input-inactive'
             })
         },
 
         getInitialState: function() {
             return ({
                 hoverClass: '',
-                inputStatus: 'not-active'
+                inputStatus: 'input-inactive'
             });
         },
 
         render: function() {
             return(
-                <div className={"search " + this.state.hoverClass} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
+                <div className={"search " + this.state.hoverClass + ' ' + this.state.inputStatus} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} onClick={this.formClick}>
                     <h3 className="search-title" >Search</h3>
                     <form className="search-form" action="#">
-                        <input className={"search-input " + this.state.inputStatus} onFocus={this.inputEnter} onBlur={this.inputLeave} type="text" />
+                        <input className="search-input" onBlur={this.inputLeave} type="text" ref="searchInput"/>
                         <input className="search-button" type="submit" value="search" />
                     </form>
                 </div>
