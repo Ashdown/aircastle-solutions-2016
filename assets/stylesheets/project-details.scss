@@ -58,8 +58,7 @@
     margin-top: 16px;
   }
 
-  .end-date,
-  .description {
+  .end-date {
     display: none;
   }
 
@@ -74,6 +73,14 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  .description {
+    display: block;
+    margin: 8px 16px 0 16px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
   }
 
   .big & {
@@ -98,14 +105,6 @@
 
     .end-date {
       display: inline;
-    }
-
-    .description {
-      display: block;
-      margin: 8px 16px 0 16px;
-      font-size: 12px;
-      line-height: 14px;
-      text-align: center;
     }
 
     .project-link-list {
@@ -227,6 +226,10 @@
       margin-top: 16px;
       font-size: 16px;
     }
+    .description {
+      font-size: 16px;
+      line-height: 18px;
+    }
     .project-link-list {
       margin-top: 16px;
     }
@@ -265,8 +268,6 @@
         height: map-get(map-get($project-image-height, desktop), big);
       }
       .description {
-        font-size: 16px;
-        line-height: 18px;
         margin-left: 208px;
         margin-right: 208px;
       }
