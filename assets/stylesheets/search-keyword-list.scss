@@ -36,3 +36,11 @@
     }
   }
 }
+
+@include respond-to(desktop) {
+  .search-keyword-list {
+    top: 58px;
+    right: 224px;
+    left: 224px;
+  }
+}
