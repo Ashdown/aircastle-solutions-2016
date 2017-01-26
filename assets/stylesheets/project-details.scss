@@ -9,7 +9,7 @@
   right: -16px;
   left: -16px;
   padding: 0 16px 16px 16px;
-  z-index: 30;
+  z-index: 200;
   color: #fff;
   background-color: $transparent-grey;
 
@@ -38,31 +38,6 @@
     position: absolute;
     top: 8px;
     right: 4px;
-  }
-
-  .close-svg {
-    height: 20px;
-    width: 20px;
-    border: 2px solid transparent;
-    overflow: hidden;
-    border-radius: 50%;
-    margin-top: -2px;
-    margin-left: -2px;
-
-    .path {
-      fill: #fff;
-    }
-  }
-
-  .close-link:hover {
-
-    .close-svg {
-      background-color: $white;
-    }
-
-    .path {
-      fill: $grey;
-    }
   }
 
   &.open .keyword-container {
@@ -244,10 +219,6 @@
       top: 32px;
       right: 12px;
       left: auto;
-    }
-    .close-svg {
-      width: 24px;
-      height: 24px;
     }
     .details-image {
       height: map-get(map-get($project-image-height, desktop), small);

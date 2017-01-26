@@ -32,7 +32,7 @@
 
             App.Stores.ProjectStore.filterByKeyword(keyword);
             this.setState({
-                projectData: App.Stores.ProjectStore.getAll(),
+                projectData: App.Stores.ProjectStore.getAll()
             });
 
         },

@@ -17,6 +17,16 @@
     }
 
     App.Components.ProjectDetails = React.createClass({
+
+        showImage: function(event) {
+
+            event.preventDefault();
+
+            var popupEvent = new CustomEvent(App.Constants.PopUpConstants.UPDATE_POP_UP, {detail: this.props.data.images[0]});
+            window.dispatchEvent(popupEvent);
+
+        },
+
         render: function() {
 
             var data = this.props.data;
@@ -35,7 +45,9 @@
                             <App.Svg.CloseSvg />
                         </a>
                         <App.Components.KeywordContainer data={data} />
-                        <App.Components.ProjectImage data={data.images[0]} extraClass="details-image" parentList={this.props.parentList} />
+                        <a href="#" onClick={this.showImage}>
+                            <App.Components.ProjectImage data={data.images[0]} extraClass="details-image" parentList={this.props.parentList} />
+                        </a>
                         <p className="dates">
                             <span className="start-date">{monthNames[data.start.getMonth()] + ', ' + data.start.getFullYear()}</span>
                             <span className="end-date"> → {monthNames[data.end.getMonth()] + ', ' + data.end.getFullYear()}</span>

@@ -12,6 +12,7 @@
                     <App.Components.Header />
                     <App.Components.MainSection />
                     <App.Components.Footer />
+                    <App.Components.PopUp />
                 </div>
                 );
         }
