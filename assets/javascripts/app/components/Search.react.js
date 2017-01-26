@@ -4,7 +4,7 @@
 
     App.Components.Search = React.createClass({
 
-        mouseEnter: function() {
+        formMouseEnter: function() {
             if(this.state.statusClass === 'inactive') {
                 this.setState({
                     statusClass: 'hover'
@@ -12,7 +12,7 @@
             }
         },
 
-        mouseLeave: function() {
+        formMouseLeave: function() {
 
             if(this.state.statusClass === 'hover') {
 
@@ -22,7 +22,7 @@
             }
         },
 
-        formClick: function(event) {
+        formMouseDown: function(event) {
             event.preventDefault();
             if (this.state.statusClass !== 'active') {
                 this.setState({
@@ -100,7 +100,11 @@
         render: function() {
 
             return(
-                <div className={"search " + this.state.statusClass} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} onMouseDown={this.formClick} onSubmit={this.search}>
+                <div className={"search " + this.state.statusClass}
+                    onMouseEnter={this.formMouseEnter}
+                    onMouseLeave={this.formMouseLeave}
+                    onMouseDown={this.formMouseDown}
+                    onSubmit={this.search}>
                     <h3 className="search-title" >{this.state.searchTitleText}</h3>
                     <form className="search-form" action="#">
                         <input className="search-input"
