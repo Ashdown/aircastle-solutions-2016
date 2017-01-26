@@ -23,6 +23,7 @@
         },
 
         formClick: function(event) {
+            event.preventDefault();
             if (this.state.statusClass !== 'active') {
                 this.setState({
                     statusClass: 'active',
@@ -31,6 +32,7 @@
             } else {
                 this.search(event);
             }
+
             this.refs.searchInput.getDOMNode().focus();
         },
 
@@ -41,6 +43,10 @@
 
         inputLeave: function() {
             //TODO
+            console.log('leave');
+            this.setState({
+                statusClass: 'inactive'
+            });
         },
 
         inputChange: function(event) {
@@ -57,7 +63,6 @@
             this.setState({
                 searchValue: newInputValue,
                 activeKeywords: newKeywords
-
             });
         },
 
@@ -65,7 +70,11 @@
             event.preventDefault();
             //get value of input
             console.log('search', this.state.searchValue);
+            this.setState({
+                searchTitleText: 'Results for ' + this.state.searchValue
+            });
             this.props.filter(this.state.searchValue);
+            this.refs.searchInput.getDOMNode().blur();
         },
 
         keywordSelect: function(event) {
@@ -77,7 +86,8 @@
             return ({
                 statusClass: 'inactive',
                 searchValue: '',
-                activeKeywords: []
+                activeKeywords: [],
+                searchTitleText: 'Search'
             });
         },
 
@@ -88,8 +98,8 @@
         render: function() {
 
             return(
-                <div className={"search " + this.state.statusClass} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} onClick={this.formClick} onSubmit={this.search}>
-                    <h3 className="search-title" >Search</h3>
+                <div className={"search " + this.state.statusClass} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} onMouseDown={this.formClick} onSubmit={this.search}>
+                    <h3 className="search-title" >{this.state.searchTitleText}</h3>
                     <form className="search-form" action="#">
                         <input className="search-input"
                             onBlur={this.inputLeave}

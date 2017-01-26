@@ -10,7 +10,12 @@
   left: 16px;
   right: 16px;
   overflow: hidden;
+  display: none;
   @include transition(max-height, 0.5, linear);
+
+  .active & {
+    display: block;
+  }
 
   &.invisible {
     max-height: 0;
