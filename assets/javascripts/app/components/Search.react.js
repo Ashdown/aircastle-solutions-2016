@@ -36,7 +36,6 @@
 
         clickSearchLink: function(event) {
             event.preventDefault();
-            console.log('click search link');
             this.search();
         },
 
@@ -58,6 +57,7 @@
             this.setState({
                 searchValue: newInputValue,
                 activeKeywords: newKeywords
+
             });
         },
 
@@ -65,6 +65,7 @@
             event.preventDefault();
             //get value of input
             console.log('search', this.state.searchValue);
+            this.props.filter(this.state.searchValue);
         },
 
         keywordSelect: function(event) {
@@ -101,7 +102,10 @@
                         </a>
                         <input className="search-button" type="submit" value="search" />
                     </form>
-                    <App.Components.SearchKeywordList data={this.state.activeKeywords} keywordSelect={this.keywordSelect}/>
+                    <App.Components.SearchKeywordList
+                        data={this.state.activeKeywords}
+                        keywordSelect={this.keywordSelect}
+                        searchTerm={this.state.searchValue} />
                 </div>
             );
         }

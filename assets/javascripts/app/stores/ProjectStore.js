@@ -21,9 +21,11 @@
             links: data.links,
             keywords: data.keywords,
             start: new Date(data.startDate),
-            end: new Date(data.endDate)
+            end: new Date(data.endDate),
+            matchesFilter: true
+
         });
-        //stot by date
+        //sort by date
         _projects.sort(function(a, b) {
             return b.start.getTime() - a.start.getTime();
         })
@@ -36,6 +38,22 @@
         getAll: function() {
             return _projects;
         },
+
+        filterByKeyword: function(keyword) {
+            console.log('filter');
+            for(var i in _projects) {
+                _projects[i].matchesFilter = false;
+
+                for(var j in _projects[i].keywords) {
+
+                    if(_projects[i].keywords[j].indexOf(keyword) !== -1) {
+                        _projects[i].matchesFilter = true;
+                        break;
+                    }
+                }
+            }
+        },
+
 
         addChangeListener: function(callback) {
             App.target.addEventListener(CHANGE_EVENT_STRING, callback);

@@ -1,0 +1,33 @@
+@import 'variables';
+@import 'mixins';
+
+.search-keyword-list {
+
+  background-color: $transparent-grey;
+  position: absolute;
+  z-index: 200;
+  top: 44px;
+  left: 16px;
+  right: 16px;
+  overflow: hidden;
+  @include transition(max-height, 0.5, linear);
+
+  &.invisible {
+    max-height: 0;
+  }
+
+  &.visible {
+    max-height: 300px;
+  }
+
+  .keyword-link {
+    color: $white;
+    font-size: 16px;
+    padding: 6px 16px;
+    display: block;
+    text-decoration: none;
+    &:hover {
+      background-color: $grey;
+    }
+  }
+}

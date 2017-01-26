@@ -28,6 +28,15 @@
             return getState();
         },
 
+        filterProjectsByKeyword: function(keyword) {
+
+            App.Stores.ProjectStore.filterByKeyword(keyword);
+            this.setState({
+                projectData: App.Stores.ProjectStore.getAll(),
+            });
+
+        },
+
         componentDidMount: function () {
             App.Stores.ProjectStore.addChangeListener(this._onChange);
             App.Actions.Project.get();
@@ -40,7 +49,7 @@
         render: function() {
             return(
                 <div>
-                    <App.Components.Search data={this.state.keywords} />
+                    <App.Components.Search data={this.state.keywords} filter={this.filterProjectsByKeyword} />
                     <App.Components.ProjectList data={this.state.projectData} />
                 </div>
                 )

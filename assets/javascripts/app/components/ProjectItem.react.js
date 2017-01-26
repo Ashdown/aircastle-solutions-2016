@@ -84,6 +84,14 @@
             });
         },
 
+        getFilteredClass: function() {
+          if (this.props.data.matchesFilter) {
+              return '';
+          } else {
+              return 'hidden';
+          }
+        },
+
         componentDidMount: function() {
             window.addEventListener('scroll', this.checkForFadeIn);
             this.props.parentList.getDOMNode().addEventListener('gridReady', this.checkForFadeIn);
@@ -99,7 +107,7 @@
             parentList = this.props.parentList;
 
             return(
-                <li className={"project-item " + this.state.visibleClass + " " + data.type + ' ' + this.state.itemStateClass} ref="item">
+                <li className={"project-item " + this.state.visibleClass + " " + data.type + ' ' + this.state.itemStateClass + this.getFilteredClass()} ref="item">
                     <div className="container">
                         <a className="details-link" onClick={this.toggleDetails} onMouseEnter={this.hoverItem} onMouseLeave={this.hoverItem} href="#"></a>
                         <App.Components.ProjectDetails

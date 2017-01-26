@@ -30,6 +30,8 @@
                     projectGrid.appended(projectItems[projectItems.length - 1]);
 
                 }
+                console.log('projectGrid.layout');
+                projectGrid.layout();
             }
 
         },
