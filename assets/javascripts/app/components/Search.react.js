@@ -42,8 +42,6 @@
         },
 
         inputLeave: function() {
-            //TODO
-            console.log('leave');
             this.setState({
                 statusClass: 'inactive'
             });
@@ -68,12 +66,16 @@
 
         search: function(event) {
             event.preventDefault();
+
+            var searchString = this.state.searchValue;
             //get value of input
-            console.log('search', this.state.searchValue);
+            console.log('search', searchString);
+
             this.setState({
-                searchTitleText: 'Results for ' + this.state.searchValue
+                searchTitleText: 'Results for ' + searchString,
+                searchValue: ''
             });
-            this.props.filter(this.state.searchValue);
+            this.props.filter(searchString);
             this.refs.searchInput.getDOMNode().blur();
         },
 

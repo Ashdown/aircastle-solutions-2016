@@ -13,7 +13,7 @@
             }
 
             for(var key in this.props.data) {
-                keywordItems.push(<li><a className="keyword-link" href="#" onClick={this.keywordSelect}>{keywordData[key]}</a></li>);
+                keywordItems.push(<li><a className="keyword-link" href="#" onMouseDown={this.props.keywordSelect}>{keywordData[key]}</a></li>);
             }
 
             return (<ul className={"search-keyword-list " + visibilityClass}>{keywordItems}</ul>);
