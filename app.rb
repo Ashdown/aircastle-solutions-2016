@@ -13,6 +13,11 @@ get '/' do
   slim :index
 end
 
+get '/api/test/header/' do
+  content_type :json
+  File.read('features/data/header.json');
+end
+
 get '/api/test/projects/' do
   file = File.read('features/data/projects.json');
   data = JSON.parse(file);

@@ -1,6 +1,26 @@
 (function (React, App) {
 
+    function getState() {
+
+        return {
+            headerData: App.Stores.HeaderStore.getContent()
+        };
+    }
+
     App.Components.Header = React.createClass({
+
+        getInitialState: function () {
+            return getState();
+        },
+
+        componentDidMount: function () {
+            App.Stores.HeaderStore.addChangeListener(this._onChange);
+            App.Actions.Header.get();
+        },
+
+        componentWillUnmount: function () {
+            App.Stores.HeaderStore.removeChangeListener(this._onChange);
+        },
 
         render: function () {
 
@@ -8,15 +28,14 @@
                 <header className="header">
                     <h1 className="page-title">Rory Devane</h1>
                     <p className="description-para">Full Stack Web Developer</p>
-                    <p className="intro-para">
-                    Hi, lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                    nisi ut aliquip ex ea commodo consequat.
-                    </p>
+                    <p className="intro-para">{this.state.headerData.introduction}</p>
                     <App.Components.Navigation />
-
                 </header>
                 )
+        },
+
+        _onChange: function () {
+            this.setState(getState());
         }
 
     });

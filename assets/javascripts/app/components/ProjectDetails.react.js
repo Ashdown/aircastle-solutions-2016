@@ -22,13 +22,16 @@
 
             //create the carousel
 
-            $(this.refs.imageList.getDOMNode()).slick({
-                infinite: false,
-                variableWidth: true,
-                mobileFirst: true,
-                prevArrow: '<a class="previous-link" href="#"></a>',
-                nextArrow: '<a class="next-link" href="#"></a>'
-            });
+            if(this.props.data.images.length > 0) {
+
+                $(this.refs.imageList.getDOMNode()).slick({
+                    infinite: false,
+                    variableWidth: true,
+                    mobileFirst: true,
+                    prevArrow: '<a class="previous-link" href="#"></a>',
+                    nextArrow: '<a class="next-link" href="#"></a>'
+                });
+            }
 
             this.setState({
                 toggleClass: 'open'
