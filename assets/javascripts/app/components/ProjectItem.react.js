@@ -135,7 +135,12 @@
             return(
                 <li className={"project-item " + this.state.visibleClass + " " + data.type + ' ' + this.state.itemStateClass + this.getFilteredClass()} ref="item">
                     <div className="container">
-                        <a className="details-link" onClick={this.showDetails} onMouseEnter={this.hoverItem} onMouseLeave={this.hoverItem} href="#"></a>
+                        <a className="details-link"
+                            onClick={this.showDetails}
+                            onMouseEnter={this.hoverItem}
+                            onMouseLeave={this.hoverItem}
+                            href="#">
+                        </a>
                         <App.Components.ProjectDetails
                             data={data}
                             toggleClass={this.state.detailsToggleClass}
