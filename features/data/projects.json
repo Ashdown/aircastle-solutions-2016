@@ -12,8 +12,20 @@
                     "width": "600"
                 },
                 {
-                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
+                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Second%20Project&w=600&h=400",
                     "alt": "Second Image",
+                    "height": "400",
+                    "width": "600"
+                },
+                {
+                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Third%20Project&w=600&h=400",
+                    "alt": "Third Image",
+                    "height": "400",
+                    "width": "600"
+                },
+                {
+                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
+                    "alt": "Third Image",
                     "height": "400",
                     "width": "600"
                 },
@@ -23,6 +35,7 @@
                     "height": "400",
                     "width": "600"
                 }
+
             ],
             "description": "This is the first projects description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             "links": [
@@ -62,6 +75,12 @@
                     "alt": "First Image",
                     "height": "400",
                     "width": "600"
+                },
+                {
+                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
+                    "alt": "First Image",
+                    "height": "400",
+                    "width": "600"
                 }
             ],
             "description": "This is the second projects description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -73,13 +92,25 @@
             ],
             "keywords": [ "Lorem", "Ipsum", "Dolar", "Sit", "Amet" ],
             "startDate": "February, 2016",
-            "endDate": "March, 2016"
+            "endDate": "February, 2017"
         },
         {
             "id": "32",
             "title": "Third Project",
-            "type": "small",
+            "type": "big",
             "pictures": [
+                {
+                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
+                    "alt": "First Image",
+                    "height": "400",
+                    "width": "600"
+                },
+                {
+                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
+                    "alt": "First Image",
+                    "height": "400",
+                    "width": "600"
+                },
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
                     "alt": "First Image",
@@ -96,13 +127,25 @@
             ],
             "keywords": [ "Lorem", "Ipsum", "Keyword", "Keyword" ],
             "startDate": "January, 2017",
-            "endDate": "January, 2017"
+            "endDate": "February, 2017"
         },
         {
             "id": "33",
             "title": "Third Project",
             "type": "big",
             "pictures": [
+                {
+                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
+                    "alt": "First Image",
+                    "height": "400",
+                    "width": "600"
+                },
+                {
+                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
+                    "alt": "First Image",
+                    "height": "400",
+                    "width": "600"
+                },
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
                     "alt": "First Image",
