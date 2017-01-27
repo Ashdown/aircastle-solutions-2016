@@ -49,11 +49,9 @@
             }
         },
 
-        toggleDetails: function(event) {
-            event.preventDefault();
-
+        getColumnClass: function() {
             var listWidth = parentList.getDOMNode().offsetWidth; //window.innerWidth - 8,
-                columnClass = 'column-one';
+            var columnClass = 'column-one';
 
             switch(getScreenType(window)) {
                 case 'mobile':
@@ -77,11 +75,39 @@
                     break;
             }
 
-            this.setState({
-                detailsToggleClass: this.state.detailsToggleClass === 'closed' ? 'open' : 'closed',
-                columnClass: columnClass,
-                itemStateClass: this.state.detailsToggleClass === 'closed' ? 'active' : ''
-            });
+            return columnClass;
+        },
+
+        showDetails: function(event) {
+
+            event.preventDefault();
+
+            if(this.props.parentList.state.locked === false) {
+                this.refs.projectDetails.show();
+                this.props.parentList.lock();
+
+                this.setState({
+                    detailsToggleClass: 'open',
+                    columnClass: this.getColumnClass(),
+                    itemStateClass:'active'
+                });
+            }
+        },
+
+        hideDetails: function(event) {
+
+            event.preventDefault();
+
+            if(this.props.parentList.state.locked === true) {
+                this.props.parentList.unlock();
+                this.refs.projectDetails.hide();
+
+                this.setState({
+                    detailsToggleClass: 'closed',
+                    itemStateClass: ''
+                });
+
+            }
         },
 
         getFilteredClass: function() {
@@ -109,13 +135,14 @@
             return(
                 <li className={"project-item " + this.state.visibleClass + " " + data.type + ' ' + this.state.itemStateClass + this.getFilteredClass()} ref="item">
                     <div className="container">
-                        <a className="details-link" onClick={this.toggleDetails} onMouseEnter={this.hoverItem} onMouseLeave={this.hoverItem} href="#"></a>
+                        <a className="details-link" onClick={this.showDetails} onMouseEnter={this.hoverItem} onMouseLeave={this.hoverItem} href="#"></a>
                         <App.Components.ProjectDetails
                             data={data}
                             toggleClass={this.state.detailsToggleClass}
-                            toggleFunction={this.toggleDetails}
+                            toggleFunction={this.hideDetails}
                             columnClass={this.state.columnClass}
-                            parentList={parentList} />
+                            parentList={parentList}
+                            ref="projectDetails" />
 
                         <div className="image-container">
                             <App.Components.ProjectImage data={data.images[0]} extraClass="image" parentList={parentList} />

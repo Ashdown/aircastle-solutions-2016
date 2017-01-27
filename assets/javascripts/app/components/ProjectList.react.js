@@ -5,6 +5,20 @@
 
     App.Components.ProjectList = React.createClass({
 
+        getInitialState: function(){
+            return({
+                locked: false
+            });
+        },
+
+        lock: function() {
+            this.setState({locked: true});
+        },
+
+        unlock: function() {
+            this.setState({locked: false});
+        },
+
         componentDidUpdate: function() {
 
             var layoutCompleteEvent = new Event('gridReady'),

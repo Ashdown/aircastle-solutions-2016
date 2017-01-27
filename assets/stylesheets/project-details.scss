@@ -52,6 +52,35 @@
     width: auto;
   }
 
+  .next-link,
+  .previous-link{
+    background-image: url(/assets/right-arrow.svg);
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    z-index: 100;
+    opacity: 0.5;
+    @include transition(opacity, 0.5s, linear);
+    &:hover {
+      opacity: 1;
+    }
+    &.slick-disabled {
+      opacity: 0;
+    }
+  }
+
+  .previous-link {
+    left: 8px;
+    transform: rotate(180deg);
+  }
+
+  .next-link {
+    right: 8px;
+  }
+
   .dates {
     text-align: center;
     font-size: 12px;

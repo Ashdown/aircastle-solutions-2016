@@ -42,9 +42,9 @@
 
                 }
             ],
-            "keywords": [ "Lorem", "Ipsum" ],
-            "startDate": "January, 2016",
-            "endDate": "February, 2016"
+            "keywords": [ "Lorem", "Ipsum", "New" ],
+            "startDate": "February, 2017",
+            "endDate": "February, 2017"
         },
         {
             "id": "12",
@@ -59,13 +59,7 @@
                 },
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
-                    "alt": "Second Image",
-                    "height": "400",
-                    "width": "600"
-                },
-                {
-                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
-                    "alt": "Third Image",
+                    "alt": "First Image",
                     "height": "400",
                     "width": "600"
                 }
@@ -114,18 +108,6 @@
                     "alt": "First Image",
                     "height": "400",
                     "width": "600"
-                },
-                {
-                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
-                    "alt": "Second Image",
-                    "height": "400",
-                    "width": "600"
-                },
-                {
-                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
-                    "alt": "Third Image",
-                    "height": "400",
-                    "width": "600"
                 }
             ],
             "description": "Lorem Ipsum",
@@ -170,18 +152,6 @@
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
                     "alt": "First Image",
-                    "height": "400",
-                    "width": "600"
-                },
-                {
-                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
-                    "alt": "Second Image",
-                    "height": "400",
-                    "width": "600"
-                },
-                {
-                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
-                    "alt": "Third Image",
                     "height": "400",
                     "width": "600"
                 }
@@ -298,18 +268,6 @@
                     "alt": "First Image",
                     "height": "400",
                     "width": "600"
-                },
-                {
-                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
-                    "alt": "Second Image",
-                    "height": "400",
-                    "width": "600"
-                },
-                {
-                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
-                    "alt": "Third Image",
-                    "height": "400",
-                    "width": "600"
                 }
             ],
             "description": "Lorem Ipsum",
@@ -331,18 +289,6 @@
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
                     "alt": "First Image",
-                    "height": "400",
-                    "width": "600"
-                },
-                {
-                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
-                    "alt": "Second Image",
-                    "height": "400",
-                    "width": "600"
-                },
-                {
-                    "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
-                    "alt": "Third Image",
                     "height": "400",
                     "width": "600"
                 }

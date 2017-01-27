@@ -1,4 +1,4 @@
-(function(App, React){
+(function (App, React, $) {
 
     var monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
@@ -11,43 +11,65 @@
     function breakLine(text) {
         var regex = /(<br\/>)/g;
 
-        return text.split(regex).map(function(line) {
+        return text.split(regex).map(function (line) {
             return line.match(regex) ? React.createElement('br') : line;
         });
     }
 
     App.Components.ProjectDetails = React.createClass({
 
-        showImage: function(event) {
+        show: function () {
 
-            event.preventDefault();
+            //create the carousel
 
-            var popupEvent = new CustomEvent(App.Constants.PopUpConstants.UPDATE_POP_UP, {detail: this.props.data.images[0]});
-            window.dispatchEvent(popupEvent);
+            $(this.refs.imageList.getDOMNode()).slick({
+                infinite: false,
+                variableWidth: true,
+                mobileFirst: true,
+                prevArrow: '<a class="previous-link" href="#"></a>',
+                nextArrow: '<a class="next-link" href="#"></a>'
+            });
 
+            this.setState({
+                toggleClass: 'open'
+            });
         },
 
-        render: function() {
+        hide: function () {
+
+            $(this.refs.imageList.getDOMNode()).slick('unslick');
+
+            this.setState({
+                toggleClass: 'hidden'
+            });
+        },
+
+        getInitialState: function () {
+            return({
+                toggleClass: 'closed'
+            });
+        },
+
+        render: function () {
 
             var data = this.props.data;
 
             var links = [];
 
-            for(var key in data.links) {
+            for (var key in data.links) {
                 links.push(<App.Components.ProjectLinkItem key={key} text={data.links[key].text} url={data.links[key].url} />)
             }
 
             return(
-                <div className={"project-details " + this.props.toggleClass + ' ' + this.props.columnClass}>
+                <div className={"project-details " + this.state.toggleClass + ' ' + this.props.columnClass}>
                     <div className="details-container">
                         <h2 className="project-title">{clean(data.title)}</h2>
                         <a className="close-link" href="#" onClick={this.props.toggleFunction}>
                             <App.Svg.CloseSvg />
                         </a>
                         <App.Components.KeywordContainer data={data} />
-                        <a href="#" onClick={this.showImage}>
-                            <App.Components.ProjectImage data={data.images[0]} extraClass="details-image" parentList={this.props.parentList} />
-                        </a>
+                        <App.Components.ProjectDetailsImageList data={data.images} parentList={this.props.parentList} ref="imageList"/>
+
                         <p className="dates">
                             <span className="start-date">{monthNames[data.start.getMonth()] + ', ' + data.start.getFullYear()}</span>
                             <span className="end-date"> → {monthNames[data.end.getMonth()] + ', ' + data.end.getFullYear()}</span>
@@ -61,4 +83,4 @@
         }
     });
 
-})(App, React);
+})(App, React, jQuery);

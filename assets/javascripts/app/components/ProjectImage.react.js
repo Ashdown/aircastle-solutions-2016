@@ -4,7 +4,7 @@
         render: function() {
 
             var data = this.props.data,
-                imageLoadedEvent = new Event('imageLoaded')
+                imageLoadedEvent = new Event('imageLoaded'),
                 parentList = this.props.parentList;
 
             function imageLoaded() {
