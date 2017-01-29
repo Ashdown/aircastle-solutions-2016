@@ -69,13 +69,20 @@
 
             var searchString = this.state.searchValue;
             //get value of input
-            console.log('search', searchString);
+
+            this.props.filter(searchString);
+
+            if(searchString === '') {
+                searchString = 'Search';
+            } else {
+                searchString = 'Results for ' + searchString;
+            }
 
             this.setState({
-                searchTitleText: 'Results for ' + searchString,
+                searchTitleText: searchString,
                 searchValue: ''
             });
-            this.props.filter(searchString);
+
             this.refs.searchInput.getDOMNode().blur();
         },
 
