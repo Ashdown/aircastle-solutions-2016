@@ -2,10 +2,8 @@
     App.Actions.Header = {
         get: function () {
 
-            var dataRequest = new Request('/api/test/header/');
-
-            fetch(dataRequest).then(function (response) {
-
+            //fetchJsonp('/api/test/header/').then(function(response){
+            fetchJsonp('http://cms.rorydevane.com/header/').then(function(response){
                 return response.json();
             }).then(function (data) {
 
