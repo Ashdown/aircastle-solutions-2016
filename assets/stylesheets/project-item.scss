@@ -15,6 +15,7 @@
     @include transition(top, 0.5s, linear);
     box-shadow: $grey-box-shadow;
     display: block;
+    background-color: $white;
   }
 
   &.invisible {
@@ -51,10 +52,6 @@
 
   &.big {
 
-    .container {
-      background-color: #00f;
-    }
-
     .container,
     .image {
       height: map-get(map-get($project-image-height, mobile), big);
@@ -63,9 +60,6 @@
 
   &.small {
 
-    .container {
-      background-color: #f00;
-    }
     .container,
     .image {
       height: map-get(map-get($project-image-height, mobile), small);

@@ -1,0 +1,16 @@
+@import 'variables';
+@import 'mixins';
+
+.results-count {
+  text-align: center;
+  color: $grey;
+  margin-top: 8px;
+  line-height: 1em;
+  font-size: 16px;
+}
+
+@include respond-to(desktop) {
+  .results-count {
+    margin-top: 16px;
+  }
+}

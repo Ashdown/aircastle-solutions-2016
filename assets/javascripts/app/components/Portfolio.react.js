@@ -50,6 +50,7 @@
             return(
                 <div>
                     <App.Components.Search data={this.state.keywords} filter={this.filterProjectsByKeyword} />
+                    <App.Components.ResultsCount data={this.state.projectData} />
                     <App.Components.ProjectList data={this.state.projectData} />
                 </div>
                 )

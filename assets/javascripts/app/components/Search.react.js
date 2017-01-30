@@ -75,7 +75,7 @@
             if(searchString === '') {
                 searchString = 'Search';
             } else {
-                searchString = 'Results for ' + searchString;
+                searchString = 'Search Results for ' + searchString;
             }
 
             this.setState({
