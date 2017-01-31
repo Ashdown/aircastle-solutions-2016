@@ -67,7 +67,7 @@
                 <div className={"project-details " + this.state.toggleClass + ' ' + this.props.columnClass}>
                     <div className="details-container">
                         <h2 className="project-title">{clean(data.title)}</h2>
-                        <a className="close-link" href="#" target="_blank" onClick={this.props.toggleFunction}>
+                        <a className="close-link" href="#" onClick={this.props.toggleFunction}>
                             <App.Svg.CloseSvg />
                         </a>
                         <App.Components.KeywordContainer data={data} />

@@ -14,7 +14,7 @@
 
             return (
                 <li className="project-link-item">
-                    <a className="project-link" href={url}>{text}</a>
+                    <a className="project-link" target="_blank" href={url}>{text}</a>
                 </li>
                 );
 

@@ -14,7 +14,7 @@
 
             return (
                 React.createElement("li", {className: "project-link-item"}, 
-                    React.createElement("a", {className: "project-link", href: url}, text)
+                    React.createElement("a", {className: "project-link", target: "_blank", href: url}, text)
                 )
                 );
 
