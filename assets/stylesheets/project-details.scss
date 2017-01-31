@@ -97,12 +97,9 @@
   }
 
   .project-link {
-    text-decoration: none;
-    color: $white;
+    text-decoration: underline;
     font-size: 11px;
-    &:hover {
-      text-decoration: underline;
-    }
+    color: $white;
   }
 
   .description {
@@ -282,6 +279,10 @@
       margin-left: 0;
       margin-right: 0;
 
+      .sub-item {
+        margin-top: 16px;
+      }
+
       .details-container {
         width: $list-width - 8px;
         margin: 0 auto;
@@ -299,8 +300,10 @@
         height: map-get(map-get($project-image-height, desktop), big);
       }
       .description {
-        margin-left: 208px;
-        margin-right: 208px;
+        margin-left: 160px;
+        margin-right: 160px;
+//        margin-left: 208px;
+//        margin-right: 208px;
       }
       .project-link-list {
         margin-top: 16px;
