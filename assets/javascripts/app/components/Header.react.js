@@ -27,7 +27,7 @@
             return (
                 <header className="header">
                     <h1 className="page-title">Rory Devane</h1>
-                    <p className="description-para">Full Stack Web Developer</p>
+                    <p className="description-para">Web Developer</p>
                     <p className="intro-para">{this.state.headerData.introduction}</p>
                     <App.Components.Navigation />
                 </header>
