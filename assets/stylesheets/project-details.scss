@@ -50,7 +50,7 @@
   .details-image {
     height: map-get(map-get($project-image-height, mobile), small);
     width: auto;
-    margin-right: 32px;
+    margin-right: 16px;
   }
 
   .next-link,
@@ -177,7 +177,8 @@
 @include respond-to(tablet) {
   .project-details {
     .details-image {
-      height: map-get(map-get($project-image-height, tablet), small);;
+      height: map-get(map-get($project-image-height, tablet), small);
+      margin-right: 32px;
     }
 
     .small &.column-two {
