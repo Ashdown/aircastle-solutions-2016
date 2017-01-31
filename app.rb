@@ -14,8 +14,9 @@ get '/' do
 end
 
 get '/api/test/header/' do
-  content_type :json
-  File.read('features/data/header.json');
+  file = File.read('features/data/header.json');
+  data = JSON.parse(file);
+  jsonp data
 end
 
 get '/api/test/projects/' do
@@ -25,11 +26,13 @@ get '/api/test/projects/' do
 end
 
 get '/api/test/about/' do
-  content_type :json
-  File.read('features/data/about.json');
+  file = File.read('features/data/about.json');
+  data = JSON.parse(file);
+  jsonp data
 end
 
 get '/api/test/links/' do
-  content_type :json
-  File.read('features/data/links.json');
+  file = File.read('features/data/links.json');
+  data = JSON.parse(file);
+  jsonp data
 end

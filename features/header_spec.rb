@@ -12,7 +12,7 @@ feature 'non-javascript header' do
   scenario 'should say Web Developer' do
     visit '/'
     within('.header') do
-      expect(page).to have_text('Full Stack Web Developer')
+      expect(page).to have_text('Web Developer')
     end
   end
 
@@ -30,7 +30,7 @@ feature 'javascript header' do
   scenario 'should say Web Developer', js:true do
     visit '/'
     within('.header') do
-      expect(page).to have_text('Full Stack Web Developer')
+      expect(page).to have_text('Web Developer')
     end
   end
 
@@ -46,8 +46,8 @@ feature 'javascript header' do
   scenario 'About Me link should work', js:true do
     visit '/'
     within('.header') do
-      expect(page).to have_text('About Me')
-      click_link('About Me')
+      expect(page).to have_text('About')
+      click_link('About')
       expect(current_url).to have_text('#about')
     end
   end
