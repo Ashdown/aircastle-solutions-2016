@@ -3,6 +3,16 @@
 
 .link-list {
   margin: 8px 32px 0 32px;
+  opacity: 1;
+  position: relative;
+  top: 0;
+  @include transition(opacity, 0.2s, linear);
+  @include transition(top, 0.2s, linear);
+
+  &.invisible {
+    opacity: 0;
+    top: 32px;
+  }
 
   .link {
     display: block;

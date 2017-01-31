@@ -2,6 +2,18 @@
 @import 'mixins';
 
 .about {
+
+  opacity: 1;
+  position: relative;
+  top: 0;
+  @include transition(opacity, 0.2s, linear);
+  @include transition(top, 0.2s, linear);
+
+  &.invisible {
+    opacity: 0;
+    top: 32px;
+  }
+
   .about-image {
     border: 1px solid $white;
     border-radius: 50%;
