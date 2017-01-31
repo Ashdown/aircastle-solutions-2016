@@ -4,8 +4,8 @@
 
             var linkDataRequest = new Request('/api/test/links/');
 
-            fetchJsonp('/api/test/links/')
-            //fetchJsonp('http://cms.rorydevane.com/links/')
+            //fetchJsonp('/api/test/links/')
+            fetchJsonp('http://cms.rorydevane.com/links/')
             .then(function(response) {
 
                 return response.json();

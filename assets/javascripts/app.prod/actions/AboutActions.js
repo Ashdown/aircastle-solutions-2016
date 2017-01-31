@@ -2,8 +2,8 @@
     App.Actions.About = {
         get: function() {
 
-            fetchJsonp('/api/test/about/').then(function(response){
-            //fetchJsonp('http://cms.rorydevane.com/about/').then(function(response){
+            //fetchJsonp('/api/test/about/').then(function(response){
+            fetchJsonp('http://cms.rorydevane.com/about/').then(function(response){
 
                 return response.json();
             }).then(function(data) {
