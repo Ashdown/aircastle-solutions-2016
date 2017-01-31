@@ -67,7 +67,7 @@
                 React.createElement("div", {className: "project-details " + this.state.toggleClass + ' ' + this.props.columnClass}, 
                     React.createElement("div", {className: "details-container"}, 
                         React.createElement("h2", {className: "project-title"}, clean(data.title)), 
-                        React.createElement("a", {className: "close-link", href: "#", onClick: this.props.toggleFunction}, 
+                        React.createElement("a", {className: "close-link", href: "#", target: "_blank", onClick: this.props.toggleFunction}, 
                             React.createElement(App.Svg.CloseSvg, null)
                         ), 
                         React.createElement(App.Components.KeywordContainer, {data: data}), 
