@@ -18,11 +18,14 @@
                 case 'github':
                     logo = <App.Svg.GitHubSvg/>;
                     break;
+                default:
+                    logo = <App.Svg.GlobeSvg/>
+                    break;
             }
 
             return(
                 <li>
-                    <a className="link" href={data.destination}>
+                    <a className="link" target="_blank" href={data.destination}>
                         {logo}
                         {data.text}
                     </a>

@@ -53,6 +53,12 @@
     }
   }
 
+  .globe-svg {
+    .path {
+      fill: $light-grey;
+    }
+  }
+
   .link:hover {
 
     .linked-in-svg {
@@ -64,6 +70,12 @@
     .github-svg {
       .path {
         fill: $github-grey;
+      }
+    }
+
+    .globe-svg {
+      .path {
+        fill: blue;
       }
     }
   }

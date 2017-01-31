@@ -17,6 +17,7 @@ map '/assets' do
   #   environment.append_path 'assets/javascripts/app'
   # end
   environment.append_path 'assets/images'
+  environment.append_path 'assets/files'
   run environment
 end
 
