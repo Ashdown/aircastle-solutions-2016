@@ -2,11 +2,8 @@
     App.Actions.About = {
         get: function() {
 
-            var aboutDataRequest = new Request('/api/test/about/');
-
-            //var projectDataRequest = new Request('http://shielded-scrubland-59117.herokuapp.com/projects/');
-
-            fetch(aboutDataRequest).then(function(response) {
+            fetchJsonp('/api/test/about/').then(function(response){
+            //fetchJsonp('http://cms.rorydevane.com/about/').then(function(response){
 
                 return response.json();
             }).then(function(data) {

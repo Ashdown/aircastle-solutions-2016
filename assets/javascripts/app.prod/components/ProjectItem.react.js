@@ -49,11 +49,9 @@
             }
         },
 
-        toggleDetails: function(event) {
-            event.preventDefault();
-
+        getColumnClass: function() {
             var listWidth = parentList.getDOMNode().offsetWidth; //window.innerWidth - 8,
-                columnClass = 'column-one';
+            var columnClass = 'column-one';
 
             switch(getScreenType(window)) {
                 case 'mobile':
@@ -77,11 +75,47 @@
                     break;
             }
 
-            this.setState({
-                detailsToggleClass: this.state.detailsToggleClass === 'closed' ? 'open' : 'closed',
-                columnClass: columnClass,
-                itemStateClass: this.state.detailsToggleClass === 'closed' ? 'active' : ''
-            });
+            return columnClass;
+        },
+
+        showDetails: function(event) {
+
+            event.preventDefault();
+
+            if(this.props.parentList.state.locked === false) {
+                this.refs.projectDetails.show();
+                this.props.parentList.lock();
+
+                this.setState({
+                    detailsToggleClass: 'open',
+                    columnClass: this.getColumnClass(),
+                    itemStateClass:'active'
+                });
+            }
+        },
+
+        hideDetails: function(event) {
+
+            event.preventDefault();
+
+            if(this.props.parentList.state.locked === true) {
+                this.props.parentList.unlock();
+                this.refs.projectDetails.hide();
+
+                this.setState({
+                    detailsToggleClass: 'closed',
+                    itemStateClass: ''
+                });
+
+            }
+        },
+
+        getFilteredClass: function() {
+          if (this.props.data.matchesFilter) {
+              return '';
+          } else {
+              return 'hidden';
+          }
         },
 
         componentDidMount: function() {
@@ -99,17 +133,24 @@
             parentList = this.props.parentList;
 
             return(
-                React.createElement("li", {className: "project-item " + this.state.visibleClass + " " + data.type + ' ' + this.state.itemStateClass, ref: "item"}, 
+                React.createElement("li", {className: "project-item " + this.state.visibleClass + " " + data.type + ' ' + this.state.itemStateClass + this.getFilteredClass(), ref: "item"}, 
                     React.createElement("div", {className: "container"}, 
-                        React.createElement("a", {className: "details-link", onClick: this.toggleDetails, onMouseEnter: this.hoverItem, onMouseLeave: this.hoverItem, href: "#"}), 
+                        React.createElement("a", {className: "details-link", 
+                            onClick: this.showDetails, 
+                            onMouseEnter: this.hoverItem, 
+                            onMouseLeave: this.hoverItem, 
+                            href: "#"}
+                        ), 
                         React.createElement(App.Components.ProjectDetails, {
                             data: data, 
                             toggleClass: this.state.detailsToggleClass, 
-                            toggleFunction: this.toggleDetails, 
-                            columnClass: this.state.columnClass}), 
+                            toggleFunction: this.hideDetails, 
+                            columnClass: this.state.columnClass, 
+                            parentList: parentList, 
+                            ref: "projectDetails"}), 
 
                         React.createElement("div", {className: "image-container"}, 
-                            React.createElement(App.Components.ProjectImage, {data: data.images[0], extraClass: "image"})
+                            React.createElement(App.Components.ProjectImage, {data: data.images[0], extraClass: "image", parentList: parentList})
                         ), 
                         React.createElement(App.Components.KeywordContainer, {data: data})
 

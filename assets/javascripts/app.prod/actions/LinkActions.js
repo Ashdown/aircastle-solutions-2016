@@ -4,9 +4,9 @@
 
             var linkDataRequest = new Request('/api/test/links/');
 
-            //var projectDataRequest = new Request('http://shielded-scrubland-59117.herokuapp.com/projects/');
-
-            fetch(linkDataRequest).then(function(response) {
+            fetchJsonp('/api/test/links/')
+            //fetchJsonp('http://cms.rorydevane.com/links/')
+            .then(function(response) {
 
                 return response.json();
             }).then(function(data) {
@@ -19,7 +19,6 @@
                 }
 
             });
-
 
         }
     }

@@ -18,11 +18,14 @@
                 case 'github':
                     logo = React.createElement(App.Svg.GitHubSvg, null);
                     break;
+                default:
+                    logo = React.createElement(App.Svg.GlobeSvg, null)
+                    break;
             }
 
             return(
                 React.createElement("li", null, 
-                    React.createElement("a", {className: "link", href: data.destination}, 
+                    React.createElement("a", {className: "link", target: "_blank", href: data.destination}, 
                         logo, 
                         data.text
                     )

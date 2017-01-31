@@ -25,9 +25,9 @@
                     ), 
 
                     React.createElement("ul", {className: "navigation-list " + this.state.menuToggleClass}, 
-                        React.createElement(App.Components.NavigationItem, {url: "#portfolio", text: "My Portfolio"}), 
-                        React.createElement(App.Components.NavigationItem, {url: "#about", text: "About Me"}), 
-                        React.createElement(App.Components.NavigationItem, {url: "#links", text: "Links"})
+                        React.createElement(App.Components.NavigationItem, {type: "portfolio-link", url: "#portfolio", text: "My Portfolio"}), 
+                        React.createElement(App.Components.NavigationItem, {type: "about-link", url: "#about", text: "About"}), 
+                        React.createElement(App.Components.NavigationItem, {type: "links-link", url: "#links", text: "Links"})
                     )
                 )
                 );

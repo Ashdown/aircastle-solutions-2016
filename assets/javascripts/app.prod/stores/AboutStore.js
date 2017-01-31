@@ -15,7 +15,7 @@
         _about = {
             description: data.description,
             image: {
-                src: data.picture.url,
+                src: data.picture.url.replace('http://cms.rorydevane.com/wp-content/', '/assets/'),
                 alt: data.picture.alt,
                 height: data.picture.height,
                 width: data.picture.width
