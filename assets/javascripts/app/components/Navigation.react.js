@@ -25,9 +25,9 @@
                     </a>
 
                     <ul className={"navigation-list " + this.state.menuToggleClass}>
-                        <App.Components.NavigationItem url="#portfolio" text="My Portfolio" />
-                        <App.Components.NavigationItem url="#about" text="About Me" />
-                        <App.Components.NavigationItem url="#links" text="Links" />
+                        <App.Components.NavigationItem type="portfolio" url="#portfolio" text="My Portfolio" />
+                        <App.Components.NavigationItem type="about" url="#about" text="About" />
+                        <App.Components.NavigationItem type="links" url="#links" text="Links" />
                     </ul>
                 </div>
                 );

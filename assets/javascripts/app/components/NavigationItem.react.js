@@ -4,7 +4,7 @@
         render: function() {
             return (
                 <li className="navigation-item">
-                    <a className="navigation-link" href={this.props.url}>{this.props.text}</a>
+                    <a className={"navigation-link " + this.props.type} href={this.props.url}>{this.props.text}</a>
                 </li>
 
                 )

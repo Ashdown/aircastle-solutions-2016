@@ -1,13 +1,30 @@
+@import 'variables';
 @import 'mixins';
 
 .page {
   font-family: Helvetica, Arial, sans-serif;
 
   .sub-title {
-    margin-top: 32px;
+    padding: 8px 0;
+    margin-top: 24px;
     font-size: 20px;
     text-align: center;
   }
+
+//  .portfolio-sub-title {
+//    color: $white;
+//    background-color: $portfolio-highlight
+//  }
+//
+//  .about-sub-title {
+//    color: $white;
+//    background-color: $about-highlight
+//  }
+//
+//  .links-sub-title {
+//    color: $white;
+//    background-color: $links-highlight
+//  }
 
   .hidden {
     display: none

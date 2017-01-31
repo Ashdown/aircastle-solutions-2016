@@ -45,6 +45,7 @@
     right: 0;
     height: 34px;
     display: inline-block;
+    opacity: 0;
   }
 
   .search-svg {
@@ -63,7 +64,6 @@
     display: none;
   }
 
-
   &.inactive {
     .search-input {
       opacity: 0;
@@ -80,7 +80,9 @@
     .search-title {
       opacity: 0;
     }
-
+    .search-link {
+      opacity: 1;
+    }
     .search-input {
       color: $white;
       background-color: $grey;

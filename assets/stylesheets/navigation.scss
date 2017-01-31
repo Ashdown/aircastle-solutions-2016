@@ -39,6 +39,8 @@
     text-decoration: none;
     color: #fff;
   }
+
+
 }
 
 @include respond-to(tablet){
@@ -81,6 +83,24 @@
         color: $light-grey;
         border-color: $light-grey;
       }
+//      &.portfolio:hover {
+//
+//        color: $portfolio-highlight;
+//        border-color: $portfolio-highlight;
+//      }
+//
+//      &.about:hover {
+//
+//        color: $about-highlight;
+//        border-color: $about-highlight;
+//      }
+//
+//      &.links:hover {
+//        color: $links-highlight;
+//        border-color: $links-highlight;
+//      }
     }
+
+
   }
 }

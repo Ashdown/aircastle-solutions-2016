@@ -1,0 +1,21 @@
+@import 'variables';
+
+@mixin linear-gradient($start, $finish) {
+  background: $start;
+  background: -moz-linear-gradient(top, $start 0%, $finish 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, $start), color-stop(100%, $finish));
+  background: -webkit-linear-gradient(top, $start 0%, $finish 100%);
+  background: -o-linear-gradient(top, $start 0%, $finish 100%);
+  background: -ms-linear-gradient(top, $start 0%, $finish 100%);
+  background: linear-gradient(to bottom, $start 0%, $finish 100%);
+}
+
+.background-shape {
+  z-index: -500;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include linear-gradient($white, #ccc);
+}

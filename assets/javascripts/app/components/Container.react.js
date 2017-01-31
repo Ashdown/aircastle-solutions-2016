@@ -13,6 +13,7 @@
                     <App.Components.MainSection />
                     <App.Components.Footer />
                     <App.Components.PopUp />
+                    <div className="background-shape"></div>
                 </div>
                 );
         }
