@@ -12,7 +12,7 @@ feature 'non-javascript header' do
   scenario 'should say Web Developer' do
     visit '/'
     within('.header') do
-      expect(page).to have_text('Web Developer')
+      expect(page).to have_text('Web Development')
     end
   end
 
@@ -30,7 +30,7 @@ feature 'javascript header' do
   scenario 'should say Web Developer', js:true do
     visit '/'
     within('.header') do
-      expect(page).to have_text('Web Developer')
+      expect(page).to have_text('Web Development')
     end
   end
 

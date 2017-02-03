@@ -27,7 +27,7 @@
             return (
                 React.createElement("header", {className: "header"}, 
                     React.createElement("h1", {className: "page-title"}, "Rory Devane"), 
-                    React.createElement("p", {className: "description-para"}, "Web Developer"), 
+                    React.createElement("p", {className: "description-para"}, "Web Development"),
                     React.createElement("p", {className: "intro-para"}, this.state.headerData.introduction), 
                     React.createElement(App.Components.Navigation, null)
                 )
