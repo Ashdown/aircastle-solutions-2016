@@ -132,7 +132,7 @@
 @include respond-to(desktop) {
   .project-item {
 
-    opacity: 0.90;
+    opacity: 0.80;
     @include transition(opacity, 0.2s, linear);
 
     &.small {
