@@ -4,6 +4,7 @@
             "id": "11",
             "title": "First Project",
             "type": "big",
+            "background_colour": "#00FFFF",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
@@ -63,6 +64,7 @@
             "id": "12",
             "title": "Second Project",
             "type": "big",
+            "background_colour": "#FF00FF",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
@@ -98,6 +100,7 @@
             "id": "32",
             "title": "Third Project",
             "type": "big",
+            "background_colour": "#FFFF00",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
@@ -133,6 +136,7 @@
             "id": "33",
             "title": "Third Project",
             "type": "big",
+            "background_colour": "#FFFFFF",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
@@ -168,6 +172,7 @@
             "id": "34",
             "title": "Fourth Project",
             "type": "small",
+            "background_colour": "#0000FF",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
@@ -191,6 +196,7 @@
             "id": "35",
             "title": "Third Project",
             "type": "big",
+            "background_colour": "#FFFFFF",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
@@ -214,6 +220,7 @@
             "id": "36",
             "title": "Third Project",
             "type": "small",
+            "background_colour": "#FFFFFF",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
@@ -236,6 +243,7 @@
             "id": "37",
             "title": "Third Project",
             "type": "small",
+            "background_colour": "#FFFFFF",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
@@ -259,6 +267,7 @@
             "id": "38",
             "title": "Third Project",
             "type": "small",
+            "background_colour": "#FFFFFF",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
@@ -282,6 +291,7 @@
             "id": "39",
             "title": "Third Project",
             "type": "small",
+            "background_colour": "#FFFFFF",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
@@ -305,6 +315,7 @@
             "id": "40",
             "title": "Third Project",
             "type": "big",
+            "background_colour": "#FFFFFF",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
@@ -328,6 +339,7 @@
             "id": "41",
             "title": "Third Project",
             "type": "big",
+            "background_colour": "#FFFFFF",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
@@ -351,6 +363,7 @@
             "id": "42",
             "title": "Third Project",
             "type": "small",
+            "background_colour": "#FFFFFF",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",
@@ -374,6 +387,7 @@
             "id": "43",
             "title": "Third Project",
             "type": "small",
+            "background_colour": "#FFFFFF",
             "pictures": [
                 {
                     "url": "https://placeholdit.imgix.net/~text?txtsize=33&txt=First%20Project&w=600&h=400",

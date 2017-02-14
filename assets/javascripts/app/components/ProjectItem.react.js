@@ -129,11 +129,15 @@
         },
 
         render: function() {
-            var data = this.props.data;
+            var data = this.props.data,
+                style = {
+                    backgroundColor: data.background_colour
+                };
             parentList = this.props.parentList;
 
             return(
-                <li className={"project-item " + this.state.visibleClass + " " + data.type + ' ' + this.state.itemStateClass + this.getFilteredClass()} ref="item">
+                <li className={"project-item " + this.state.visibleClass + " " + data.type + ' ' + this.state.itemStateClass + this.getFilteredClass()}
+                    ref="item">
                     <div className="container">
                         <a className="details-link"
                             onClick={this.showDetails}
@@ -149,7 +153,7 @@
                             parentList={parentList}
                             ref="projectDetails" />
 
-                        <div className="image-container">
+                        <div className="image-container" style={style}>
                             <App.Components.ProjectImage data={data.images[0]} extraClass="image" parentList={parentList} />
                         </div>
                         <App.Components.KeywordContainer data={data} />
