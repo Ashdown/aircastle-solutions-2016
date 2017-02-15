@@ -8,7 +8,10 @@
             for(var key in this.props.data) {
 
                 imageItems.push(
-                    <App.Components.ProjectDetailsImageItem data={this.props.data[key]} parentList={this.props.parentList} />
+                    <App.Components.ProjectDetailsImageItem
+                        data={this.props.data[key]}
+                        parentList={this.props.parentList}
+                        loadImage={this.props.detailsOpened} />
                 );
             }
 

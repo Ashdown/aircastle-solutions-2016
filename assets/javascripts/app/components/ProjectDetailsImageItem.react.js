@@ -11,10 +11,18 @@
         },
 
         render: function() {
+
+
+            var imageState = this.props.loadImage ? 'load' : 'lazy';
+
             return(
                 <li>
                     <a href="#" onClick={this.showImage}>
-                        <App.Components.ProjectImage data={this.props.data} extraClass="details-image" parentList={this.props.parentList} />
+                        <App.Components.ProjectImage
+                            data={this.props.data}
+                            extraClass="details-image"
+                            parentList={this.props.parentList}
+                            imageState={imageState} />
                     </a>
                 </li>
                 );

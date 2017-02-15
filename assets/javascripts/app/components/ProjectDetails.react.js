@@ -32,10 +32,11 @@
                     nextArrow: '<a class="next-link" href="#"></a>'
                 });
             }
-
             this.setState({
-                toggleClass: 'open'
+                toggleClass: 'open',
+                detailsOpened: true
             });
+
         },
 
         hide: function () {
@@ -49,7 +50,8 @@
 
         getInitialState: function () {
             return({
-                toggleClass: 'closed'
+                toggleClass: 'closed',
+                detailsOpened: false
             });
         },
 
@@ -71,7 +73,11 @@
                             <App.Svg.CloseSvg />
                         </a>
                         <App.Components.KeywordContainer data={data} />
-                        <App.Components.ProjectDetailsImageList data={data.images} parentList={this.props.parentList} ref="imageList"/>
+                        <App.Components.ProjectDetailsImageList
+                            data={data.images}
+                            parentList={this.props.parentList}
+                            detailsOpened={this.state.detailsOpened}
+                            ref="imageList"/>
 
                         <p className="dates">
                             <span className="start-date">{monthNames[data.start.getMonth()] + ', ' + data.start.getFullYear()}</span>
