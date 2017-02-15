@@ -55,7 +55,7 @@
 
             switch(getScreenType(window)) {
                 case 'mobile':
-                    if(this.refs.item.getDOMNode().offsetLeft >= listWidth/2) {
+                    if(this.refs.item.getDOMNode().offsetLeft >= Math.floor(listWidth/2)) {
                         columnClass = 'column-two'
                     }
                     break;
