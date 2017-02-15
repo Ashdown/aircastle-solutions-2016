@@ -1,9 +1,8 @@
-(function(React, App, fetch, Request){
+(function(React, App, fetch, Request, helpers){
     App.Actions.About = {
         get: function() {
 
-            //fetchJsonp('/api/test/about/').then(function(response){
-            fetchJsonp('http://cms.rorydevane.com/about/').then(function(response){
+            fetchJsonp(helpers.getEndpoint() + 'about/').then(function(response){
 
                 return response.json();
             }).then(function(data) {
@@ -17,4 +16,4 @@
 
         }
     }
-})(React, App, fetch, Request);
+})(React, App, fetch, Request, helpers);

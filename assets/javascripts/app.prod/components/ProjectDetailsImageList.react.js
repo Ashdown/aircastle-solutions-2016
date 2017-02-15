@@ -8,7 +8,10 @@
             for(var key in this.props.data) {
 
                 imageItems.push(
-                    React.createElement(App.Components.ProjectDetailsImageItem, {data: this.props.data[key], parentList: this.props.parentList})
+                    React.createElement(App.Components.ProjectDetailsImageItem, {
+                        data: this.props.data[key], 
+                        parentList: this.props.parentList, 
+                        loadImage: this.props.detailsOpened})
                 );
             }
 

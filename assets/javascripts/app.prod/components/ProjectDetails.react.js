@@ -32,10 +32,11 @@
                     nextArrow: '<a class="next-link" href="#"></a>'
                 });
             }
-
             this.setState({
-                toggleClass: 'open'
+                toggleClass: 'open',
+                detailsOpened: true
             });
+
         },
 
         hide: function () {
@@ -49,7 +50,8 @@
 
         getInitialState: function () {
             return({
-                toggleClass: 'closed'
+                toggleClass: 'closed',
+                detailsOpened: false
             });
         },
 
@@ -71,7 +73,11 @@
                             React.createElement(App.Svg.CloseSvg, null)
                         ), 
                         React.createElement(App.Components.KeywordContainer, {data: data}), 
-                        React.createElement(App.Components.ProjectDetailsImageList, {data: data.images, parentList: this.props.parentList, ref: "imageList"}), 
+                        React.createElement(App.Components.ProjectDetailsImageList, {
+                            data: data.images, 
+                            parentList: this.props.parentList, 
+                            detailsOpened: this.state.detailsOpened, 
+                            ref: "imageList"}), 
 
                         React.createElement("p", {className: "dates"}, 
                             React.createElement("span", {className: "start-date"}, monthNames[data.start.getMonth()] + ', ' + data.start.getFullYear()), 

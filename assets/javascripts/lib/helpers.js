@@ -11,16 +11,23 @@
 
         orderObjectByKey: function(unordered) {
 
-        var ordered = {};
+            var ordered = {};
 
-        Object.keys(unordered).sort().forEach(function(key) {
-            ordered[key] = unordered[key];
-        });
+            Object.keys(unordered).sort().forEach(function(key) {
+                ordered[key] = unordered[key];
+            });
 
-        return ordered;
-    }
+            return ordered;
+        },
 
-}
+        getEndpoint: function() {
+            //production
+            //return 'http://cms.rorydevane.com/';
+            //test and local
+            return '/api/test/';
+        }
+
+    };
 
     window.helpers = helpers;
 })(window);

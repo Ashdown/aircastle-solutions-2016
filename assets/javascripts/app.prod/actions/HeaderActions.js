@@ -2,8 +2,7 @@
     App.Actions.Header = {
         get: function () {
 
-            //fetchJsonp('/api/test/header/').then(function(response){
-            fetchJsonp('http://cms.rorydevane.com/header/').then(function(response){
+            fetchJsonp(helpers.getEndpoint() + 'header/').then(function(response){
                 return response.json();
             }).then(function (data) {
 
@@ -16,4 +15,4 @@
 
         }
     }
-})(React, App, fetch, Request);
+})(React, App, fetch, Request, helpers);

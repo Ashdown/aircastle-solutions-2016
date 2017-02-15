@@ -11,10 +11,18 @@
         },
 
         render: function() {
+
+
+            var imageState = this.props.loadImage ? 'load' : 'lazy';
+
             return(
                 React.createElement("li", null, 
                     React.createElement("a", {href: "#", onClick: this.showImage}, 
-                        React.createElement(App.Components.ProjectImage, {data: this.props.data, extraClass: "details-image", parentList: this.props.parentList})
+                        React.createElement(App.Components.ProjectImage, {
+                            data: this.props.data, 
+                            extraClass: "details-image", 
+                            parentList: this.props.parentList, 
+                            imageState: imageState})
                     )
                 )
                 );
