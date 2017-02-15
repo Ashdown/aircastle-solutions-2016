@@ -22,9 +22,9 @@
 
         getEndpoint: function() {
             //production
-            //return 'http://cms.rorydevane.com/';
+            return 'http://cms.rorydevane.com/';
             //test and local
-            return '/api/test/';
+            //return '/api/test/';
         }
 
     };
