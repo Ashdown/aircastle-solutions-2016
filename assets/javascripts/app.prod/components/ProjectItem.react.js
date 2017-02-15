@@ -129,11 +129,15 @@
         },
 
         render: function() {
-            var data = this.props.data;
+            var data = this.props.data,
+                style = {
+                    backgroundColor: data.background_colour
+                };
             parentList = this.props.parentList;
 
             return(
-                React.createElement("li", {className: "project-item " + this.state.visibleClass + " " + data.type + ' ' + this.state.itemStateClass + this.getFilteredClass(), ref: "item"}, 
+                React.createElement("li", {className: "project-item " + this.state.visibleClass + " " + data.type + ' ' + this.state.itemStateClass + this.getFilteredClass(), 
+                    ref: "item"}, 
                     React.createElement("div", {className: "container"}, 
                         React.createElement("a", {className: "details-link", 
                             onClick: this.showDetails, 
@@ -149,7 +153,7 @@
                             parentList: parentList, 
                             ref: "projectDetails"}), 
 
-                        React.createElement("div", {className: "image-container"}, 
+                        React.createElement("div", {className: "image-container", style: style}, 
                             React.createElement(App.Components.ProjectImage, {data: data.images[0], extraClass: "image", parentList: parentList})
                         ), 
                         React.createElement(App.Components.KeywordContainer, {data: data})

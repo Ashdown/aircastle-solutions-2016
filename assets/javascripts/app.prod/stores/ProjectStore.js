@@ -28,6 +28,7 @@
             id: id,
             title: data.title,
             type: data.type,
+            background_colour: data.background_colour,
             description: data.description,
             images: images,
             links: data.links,
