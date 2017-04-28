@@ -13,6 +13,10 @@ get '/' do
   slim :index
 end
 
+get '/google5182d920005b9ffa.html' do
+  slim :verification, layout: false
+end
+
 get '/api/test/header/' do
   file = File.read('features/data/header.json');
   data = JSON.parse(file);
